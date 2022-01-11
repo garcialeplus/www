@@ -1,0 +1,48 @@
+html {
+  background: url("../images/webb-dark.png");
+}
+
+body {
+  width: 960px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 37px;
+  background: url("../images/webb.png");
+  box-shadow: 0 0 12px 4px rgba(0 0 0 / 70%);
+  border: 2px solid #000;
+  text-align: center;
+  font-family: "Titillium Web", sans-serif;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+a {
+  color: #000;
+  font-size: 18px;
+  padding: 5px;
+}
+
+article {
+  padding: 0 100px;
+}
+
+h1 {
+  font-family: Genos, sans-serif;
+  font-size: 40px;
+  color: #000;
+}
+
+h2 {
+  font-size: 16px;
+  color: #666;
+}
+
+p {
+  font-size: 15px;
+  color: #000;
+}
+
+nav {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
