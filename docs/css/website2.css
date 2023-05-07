@@ -1,0 +1,542 @@
+html {
+  background-color: #ffffff
+}
+
+/*Reset*/
+:root {	
+	primary-color: white;
+	secondary-color: black;
+	tertiary-color: #1995ad;
+	main-typography: Quicksand, sans-serif;
+	secondary-typography: Raleway, sans-serif;
+}
+@media(prefers-colo-scheme: dark){
+	:root{
+		primary-color: white;
+		secundary-color: black;
+	}
+}
+@media(prefers-contrast: high){
+	:root{
+		primary-color: black;
+		secundary-color: white;
+	}
+}
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+    box-sizing: border-box;
+    vertical-align: middle;
+    -webkit-border-vertical-spacing: middle;
+}
+img ,picture, video , iframe , figure{
+	max-width: 100%;
+	diplay: block;
+}
+li {
+	list-style-type: none;
+}
+html {
+	scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+	font-size: 1em;
+	font-weight: inherit;
+	font-style: inherit;
+	text-decoration: none;
+	color: inherit;
+}
+blockquote:before, blockquote:afteer, q:before, q:aftter{
+	content: "";
+	content:none;
+}
+::selection{
+	background-color: white;
+	color: #1995ad;
+}
+svg{
+	width: 100%;
+	display: block;
+	fill: currentColor;
+}
+body{
+	min-height: 100vh;
+	font-size: 100%;
+	font-family: var(secondary-typography);
+	color: var(black);
+	line-height: 1.4em;
+	hyphens: auto;
+	font-smooth: always;
+	webkit-font-smoothing: antialiased;
+	moz-ozx-font-smoothing: grayscale;
+}
+
+/*Body*/
+body {
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  color: #000000;
+  letter-spacing: 1px;
+}
+
+header {
+  background-color: #000000;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-size: cover;
+  background-position: 10,20,10,20;
+}
+
+h1 {
+  	font-family: 'Quicksand', sans-serif;
+	font-weight: Bold;
+ 	font-size:100%;
+ 	color: #ffffff;
+  	text-transform: uppercase;
+ 	letter-spacing: 1px;
+}
+
+.right{
+	width: 100%;
+	padding: 1em;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content:space-between;
+	align-items:right;
+}
+
+.button{
+	background-color:#000;
+	display: none;
+}
+
+.button .svg{
+	width: 2em;
+	height: 2em;
+	fill:#1995ad;
+}
+
+.right .nav{}
+.right .ul{
+	display: flex;
+	flex-flow: row mowrap;
+	justify-content: flex-end;
+	align-items: right;
+}
+.right .li{
+	margin:0 1em;
+}
+
+/* Style the links inside the navigation bar */
+.ul.a {
+    float: right;
+    color: #fff;
+    text-align: right;
+    margin-top: 3%;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+    font-size: 30px;
+    transition: 0.5s;
+	font-family: 'Raleway', sans-serif;
+}
+
+#menu {
+	padding-right: 50px
+}
+
+/* Change the color of links on hover */
+#menu a:hover {
+  background-color: #1995ad;
+  color: white;
+}
+
+/* Add a color to the active/current link */
+#menu a.active {
+  background-color: #1995ad;
+  color: white;
+}
+
+@media screen and (max-width:480px){
+	.right .button{
+		display: block;
+		cursor: pointer;
+	}
+	.right .nav{
+		width: 100%;
+		/*display: none;*/
+		height: 0;
+		pointer-events: none;
+		overflow: hidden;
+		transition: all .5s ease;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+		align-items: center;
+		
+	}
+	.right .nav.activo{
+		/*display: block;*/
+		height: 50vh;
+		pointer-events: auto;
+	}
+	.right .ul{
+		flex-direction: column;
+	}
+	.right .li{
+		margin: 1rem 0;
+	}
+}
+
+.thick {
+  border: solid 2px #1995ad;
+  width: 100%;
+}
+
+.thin {
+  border: solid 1px #1995ad;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+  
+
+
+
+/* Slideshow container */
+.slideshow-container {
+  padding-top: 50px;
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+.mySlides img {
+  width: 100%;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* Position the "prev button" to the left */
+.prev {
+  left: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 16px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+.special {
+    background-color: #f1f1f2;
+    align: horizontal;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 20%;
+    padding-right: 20%;
+	line-height: 140%
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+
+
+
+
+.row0 {
+	background-color: #F0F8FF;
+}
+
+h2 {
+  font-family: 'Quicksand', sans-serif;
+  font-size:25px;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 30px	
+}
+
+/* Clear floats after image containers */
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+  margin-bottom: 10px;
+ background-color: #58B0C2;
+}
+
+.column {
+    width: 33.3%;
+    padding: 5px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+
+.polaroid {
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-left: 1px;
+	margin-right: 1px;
+	padding-top: 20px;
+	padding-bottom: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background-color: #fff
+	}
+
+.polaroid img {
+	padding-bottom: 15px;
+}
+
+a {
+  text-decoration: none;
+	
+}
+
+.spacer {
+  background-color: #ffffff;
+  font-size: 10px;
+}
+
+.info_content {
+  padding: 5px;
+}
+
+footer {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  text-align: center;
+  align: horizontal;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 15px;
+}
+
+.srow {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.srow,
+.srow>.scolumn {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.scolumn {
+  float: left;
+  width: 33.33%;
+  display: none;
+  /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.srow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Add a grey background color on mouse-over */
+.btn:hover {
+  background-color: #1995ad;
+}
+
+/* Add a dark background color to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+.w3-container:after, .w3-container:before, .w3-panel:after, .w3-panel:before, .w3-row:after, .w3-row:before, .w3-row-padding:after, .w3-row-padding:before, .w3-cell-row:before, .w3-cell-row:after, .w3-clear:after, .w3-clear:before, .w3-bar:before, .w3-bar:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.w3-row-padding, .w3-row-padding > .w3-half, .w3-row-padding > .w3-third, .w3-row-padding > .w3-twothird, .w3-row-padding > .w3-threequarter, .w3-row-padding > .w3-quarter, .w3-row-padding > .w3-col {
+    padding: 0 8px;
+    background-color: #f1f1f2;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+}
+
+.w3-col, .w3-half, .w3-third, .w3-twothird, .w3-threequarter, .w3-quarter {
+  float: left;
+  width: 100%
+}
+@media (min-width:601px) {
+  .w3-col.m1 {
+    width: 8.33333%
+  }
+  .w3-col.m2 {
+    width: 16.66666%
+  }
+  .w3-col.m3, .w3-quarter {
+    width: 24.99999%
+  }
+  .w3-col.m4, .w3-third {
+    width: 33.33333%
+  }
+  .w3-col.m5 {
+    width: 41.66666%
+  }
+  .w3-col.m6, .w3-half {
+    width: 49.99999%
+  }
+  .w3-col.m7 {
+    width: 58.33333%
+  }
+  .w3-col.m8, .w3-twothird {
+    width: 66.66666%
+  }
+  .w3-col.m9, .w3-threequarter {
+    width: 74.99999%
+  }
+  .w3-col.m10 {
+    width: 83.33333%
+  }
+  .w3-col.m11 {
+    width: 91.66666%
+  }
+  .w3-col.m12 {
+    width: 99.99999%
+  }
+}
+
+#logo2 img {
+    height: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.about {
+	padding-top: 10px
+}
+
+#socialmedia img {
+    height: 60px;
+    margin-right: 20px;
+    padding-top: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}

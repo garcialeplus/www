@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Paola García-Leplus - Travel</title>
+	<link rel="stylesheet" href="css/website2.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<script src="script/javascript.js"></script>
+
+</head>
+
+<body onload="onLoadSlides(); onLoadFilter();">
+	<header>
+		<h1>García-Leplus</h1>
+	</header>
+
+	<div>
+		<div id="logo">
+			<a href="index.html"><img src="images/logo2.png" id="top_logo" alt="logo" /></a>
+		</div>
+		<div id="menu">
+			<a href="contact.html">Contact</a>
+			<a href="art.html">Art</a>
+			<a href="design.html">Design</a>
+			<a href="photography.html">Photography</a>
+			<a href="index.html">Home</a>
+		</div>
+	</div>
+
+	<hr class="thick" />
+
+	<h2>TRAVEL</h2>
+	<div id="myBtnContainer">
+		<button class="btn selected" onclick="filterSelection('all');">Show all</button>
+		<button class="btn" onclick="filterSelection('americas');">Americas</button>
+		<button class="btn" onclick="filterSelection('europe');">Europe</button>
+		<button class="btn" onclick="filterSelection('asia');">Asia</button>
+	</div>
+
+	<!-- Portfolio Gallery Grid -->
+	<div class="srow">
+		<div class="scolumn americas">
+			<div class="content">
+				<a href="newyork.html"><img src="images/nature1.jpg" alt="Americas" style="width:100%"></a>
+				<h4><a href="newyork.html">New York</a></h4>
+				<p>clouds</p>
+			</div>
+		</div>
+		<div class="scolumn americas">
+			<div class="content">
+				<a href="sanfrancisco.html"><img src="images/nature2.jpg" alt="Americas" style="width:100%"></a>
+				<h4><a href="sanfrancisco.html">San Francisco</a></h4>
+				<p>Moon</p>
+			</div>
+		</div>
+		<div class="scolumn americas">
+			<div class="content">
+				<a href="yellowstone.html"><img src="images/nature3.jpg" alt="Americas" style="width:100%"></a>
+				<h4><a href="yellowstone.html">Yellowstone National Park</a></h4>
+				<p>Bee</p>
+			</div>
+		</div>
+
+		<div class="scolumn europe">
+			<div class="content">
+				<a href="paris.html"><img src="images/city1.jpg" alt="Europe" style="width:100%"></a>
+				<h4><a href="paris.html">Paris</a></h4>
+				<p>Palace of Fine Arts Theatre</p>
+			</div>
+		</div>
+		<div class="scolumn europe">
+			<div class="content">
+				<a href="venice.html"><img src="images/city2.jpg" alt="Europe" style="width:100%"></a>
+				<h4><a href="venice.html">Venice</a></h4>
+				<p>Crissy field West Bluff Picnic Area</p>
+			</div>
+		</div>
+		<div class="scolumn europe">
+			<div class="content">
+				<a href="london.html"><img src="images/city3.jpg" alt="Europe" style="width:100%"></a>
+				<h4><a href="london.html">London</a></h4>
+				<p>Golden Gate Brige</p>
+			</div>
+		</div>
+
+		<div class="scolumn asia">
+			<div class="content">
+				<a href="jerusalem.html"><img src="images/wild1.jpg" alt="Asia" style="width:100%"></a>
+				<h4><a href="jerusalem.html">Jerusalem</a></h4>
+				<p>Seagull</p>
+			</div>
+		</div>
+		<div class="scolumn asia">
+			<div class="content">
+				<a href="petra.html"><img src="images/wild2.jpg" alt="Asia" style="width:100%"></a>
+				<h4><a href="petra.html">Petra</a></h4>
+				<p>Raven</p>
+			</div>
+		</div>
+		<div class="scolumn asia">
+			<div class="content">
+				<a href="wadirum.html"><img src="images/wild3.jpg" alt="Asia" style="width:100%"></a>
+				<h4><a href="wadirum.html">Wadi Rum</a></h4>
+				<p>Hummingbird</p>
+			</div>
+		</div>
+		<!-- END GRID -->
+	</div>
+
+	<hr class="thin" />
+
+	<table class="info">
+		<tbody>
+			<tr>
+				<td id="left_column" class="info_content">
+					<div id="logo2">
+						<a href="index.html"><img src="images/logo2.png" alt="logo" /></a>
+					</div>
+				</td>
+				<td id="center_column" class="info_content">
+					<div class="about">
+						<a href="about.html">About me</a><br />
+						<a href="contact.html">Contact</a><br />
+						<a href="term.html">Term of use</a>
+					</div>
+				</td>
+				<td id="right_column" class="info_content">
+					<div class="socialmedia">
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<a href="https://www.instagram.com/paolaggarciacuevas/" target="_blank"><img src="images/instagram.png" alt="Instagram" /></a>
+									</td>
+									<td>
+										<a href="https://www.linkedin.com/in/paola-garcia-leplus/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href="https://www.facebook.com/paolagarciaphoto/" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
+									</td>
+									<td>
+										<a href="https://www.youtube.com/channel/UCOx2axDk0eRLjo2OBwkV6lg" target="_blank"><img src="images/youtube.png" alt="YouTube" /></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<hr class="thin" />
+
+	<footer>
+		Copyright © 2022 García-Leplus. All rights reserved. San Francisco, CA.
+	</footer>
+
+</body>
+
+</html>

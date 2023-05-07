@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Paola García-Leplus - Travel</title>
+	<link rel="stylesheet" href="css/website2.css">
+        <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+	<link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+
+<body>
+	<header>
+		<h1>García-Leplus</h1>
+	</header>
+
+	<div>
+		<div id="logo">
+			<a href="index.html"><img src="images/logo2.png" id="top_logo" alt="logo" /></a>
+		</div>
+		<div id="menu">
+			<a href="contact.html">Contact</a>
+			<a href="art.html">Art</a>
+			<a href="design.html">Design</a>
+			<a href="photography.html">Photography</a>
+			<a href="index.html">Home</a>
+		</div>
+	</div>
+
+	<hr class="thick" />
+
+	<h2>SAN FRANCISCO</h2>
+
+	<script type="module">
+            import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
+            const lightbox = new PhotoSwipeLightbox({
+              gallery: '#gallery',
+              children: 'a',
+              pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+            });
+            lightbox.init();
+        </script>
+
+        <div id="gallery">
+	  <a href="images/city0.jpg"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/city0.jpg" alt="City 0" />
+	  </a>
+	  <a href="images/city0.jpg"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/city1.jpg" alt="City 1" />
+	  </a>
+	  <a href="images/city0.jpg"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/city2.jpg" alt="City 2" />
+	  </a>
+	  <a href="images/city0.jpg"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/city3.jpg" alt="City 3" />
+	  </a>
+	</div>
+
+	<hr class="thin" />
+
+	<table class="info">
+		<tbody>
+			<tr>
+				<td id="left_column" class="info_content">
+					<div id="logo2">
+						<a href="index.html"><img src="images/logo2.png" alt="logo" /></a>
+					</div>
+				</td>
+				<td id="center_column" class="info_content">
+					<div class="about">
+						<a href="about.html">About me</a><br />
+						<a href="contact.html">Contact</a><br />
+						<a href="term.html">Term of use</a>
+					</div>
+				</td>
+				<td id="right_column" class="info_content">
+					<div class="socialmedia">
+						<table>
+							<tbody>
+								<tr>
+									<td>
+										<a href="https://www.instagram.com/paolaggarciacuevas/" target="_blank"><img src="images/instagram.png" alt="Instagram" /></a>
+									</td>
+									<td>
+										<a href="https://www.linkedin.com/in/paola-garcia-leplus/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" /></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a href="https://www.facebook.com/paolagarciaphoto/" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
+									</td>
+									<td>
+										<a href="https://www.youtube.com/channel/UCOx2axDk0eRLjo2OBwkV6lg" target="_blank"><img src="images/youtube.png" alt="YouTube" /></a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<hr class="thin" />
+
+	<footer>
+		Copyright © 2022 García-Leplus. All rights reserved. San Francisco, CA.
+	</footer>
+
+</body>
+
+</html>
