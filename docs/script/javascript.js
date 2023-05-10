@@ -84,11 +84,3 @@ function w3RemoveClass(element, name) {
   }
   element.className = arr1.join(" ");
 }
-
-/* Cuando hago CLICK .button, .nav TOGGLE 'activo'*/
-const button = document.querySelector('.button')
-const nav =document.querySelector('.nav')
-
-button.addEventListener('click',()=>{
-	nav.classList.toggle('activo')
-})
