@@ -1,4 +1,4 @@
-let slideIndex = 1;
+var slideIndex = 1;
 
 function onLoadSlides() {
   showSlides(slideIndex);
@@ -15,9 +15,9 @@ function currentSlide(n) {
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
+  var i = 0;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1
   }
@@ -83,4 +83,13 @@ function w3RemoveClass(element, name) {
     }
   }
   element.className = arr1.join(" ");
+}
+
+function onLoadMenu() { 
+	/* click .button, .nav TOGGLE 'activo' */
+	var button = document.querySelector('.button')
+	var nav    = document.querySelector('.nav')
+	button.addEventListener('click', () => {
+    	nav.classList.toggle('activo')
+	})
 }

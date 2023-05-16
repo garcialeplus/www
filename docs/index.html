@@ -7,36 +7,36 @@
 	<title>Paola García-Leplus</title>
 	<link rel="stylesheet" href="css/website2.css">
 	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!--Reset -->
 	<link rel="stylesheet" href="css/website2.css">	
 	<script src="script/javascript.js"></script>
 </head>
 
-<body onload="onLoadSlides();">
-	<header>
- 		<h1>García-Leplus</h1>
-	
+<body onload="onLoadSlides(); onLoadMenu()">
 
+<header class="header">
+	<h1 class="h1">
+		<a href="#" class="title">García-Leplus</a>
+	</h1>
+	
 	<button class="button">
 		<svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-  			<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+			<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
 		</svg>
 	</button>
-	
-	<div class="right">
-  		<div id="menu">
-			<nav class="nav">
-				<ul class="ul">
-					<li class="li"><a href="index.html" class="a">Home</a></li>
-					<li class="li"><a href="photography.html" class="a">Photography</a></li> 
-					<li class="li"><a href="design.html" class="a">Design</a></li> 
-					<li class="li"><a href="art.html" class="a">Art</a></li> 
-					<li class="li"><a href="contact.html" class="a">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>	
+	<nav class="nav">
+			<ul class="ul">
+				<li class="li"><a href="index.html" class="a">Home</a></li>
+				<li class="li"><a href="travel.html" class="a">Travel</a></li> 
+				<li class="li"><a href="collaborations.html" class="a">Collaborations</a></li> 
+				<li class="li"><a href="postcards.html" class="a">Postcards</a></li> 
+				<li class="li"><a href="design.html" class="a">Design</a></li> 
+				<li class="li"><a href="contact.html" class="a">Contact</a></li>
+			</ul>
+	</nav>
 </header>	
-	<hr class="thick" />
+	
+<hr class="thick" />
 
 	<!-- Slideshow container -->
 	<div class="slideshow-container"> 
@@ -70,48 +70,53 @@
 		<span class="dot" onclick="currentSlide(3)"></span> 
 	</div>
 	
-	<hr class="thin" />
+<!-- Presentation -->
+	<hr class="thin1" />
 	
 	<p class="special"> Hello, I'm Paola, a Mexican living in San Francisco. I quit my long time career to explore my creativity and study graphic design. This website is to share my journey, hope you like it. </p>
 	
-	<hr class="thin" />
+	<hr class="thin1" />
 
-	<div class="row0">
+	<div class="portfolioarea">
 		
 		<h2> Portfolio</h2>
 	
-		<div class="row">
-  			<div class="column"> 
+		<div class="portfoliorow">
+  			<div class="portfoliocolumn"> 
 				<div class="polaroid">
-					<img src="images/img_photography.png" alt="Photography" style="width:100%">
-					<a href="photography.html">Photography</a>
-   					<p>The images that my eyes have captured during my journey.</p>
+					<img src="images/img_photography.png" alt="Travel">
+					<a href="travel.html">Travel</a>
 				</div>
 			</div>
-			<div class="column"> 
+			<div class="portfoliocolumn"> 
 				<div class="polaroid">
-					<img src="images/img_design.png" alt="Design" style="width: 100%">
+					<img src="images/img_design.png" alt="Collaboration">
+					<a href="collaboration.html">Collaborations</a>
+				</div>
+			</div>
+		</div>
+		<div class="portfoliorow">
+			<div class="portfoliocolumn">
+				<div class="polaroid">
+				 	<img src="images/img_art.png" alt="Postcards">
+					<a href="postcards.html">Postcards</a>
+				</div>
+			</div>
+			<div class="portfoliocolumn">
+				<div class="polaroid">
+				 	<img src="images/img_art.png" alt="Design">
 					<a href="design.html">Design</a>
-    				<p>Design is the place where my mind flies.</p>
-				</div>
-			</div>
-			<div class="column">
-				<div class="polaroid">
-				 	<img src="images/img_art.png" alt="Art" style="width:100%">
-					<a href="art.html">Art</a>
-    				<p>The art that my heart asks my hands to do.</p>
 				</div>
 			</div>
 		</div>	
+	 </div>
 		
-	</div>
-		
-<hr class="thin" />
+<hr class="thin2" />
 		
 <div class="w3-row-padding">
   <div class="w3-third">
     <div id="logo2"> 
-		<a href="index.html"><img src="images/logo2.png" alt="logo" /></a> 
+		<a href="index.html"><img src="images/logo.png" alt="logo" /></a> 
 	</div>
   </div>
   <div class="w3-third">
@@ -134,7 +139,7 @@
 	</div>
   </div>
 </div>
-<hr class="thin" />
+<hr class="thin3" />
 <footer> Copyright © 2023 García-Leplus. All rights reserved. San Francisco, CA. </footer>
 </body>
 </html>
