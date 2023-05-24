@@ -147,14 +147,14 @@ body{
 	}
 	.header .nav.activo{
 		/*display: block;*/
-		height: 50vh;
+		height: 40vh;
 		pointer-events: auto;
 	}
 	.header .ul{
 		flex-direction: column;
 	}
 	.header .li{
-		margin: 1rem 0;
+		margin: .5rem 0;
 	}
 }
 
@@ -185,13 +185,13 @@ body {
   border: solid 1px #1995ad;
   width: 100%;
   margin-top: 40px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .thin3 {
   border: solid 1px #1995ad;
   width: 100%;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 
 /* Slideshow container */
@@ -308,8 +308,8 @@ body {
     font-size: 18px;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 20%;
-    padding-right: 20%;
+    padding-left: 5%;
+    padding-right: 5%;
 	line-height: 140%
 }
 
@@ -329,6 +329,7 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-top: 40px;
+  padding-bottom: 20px;
 }
 
 .portfoliorow {
@@ -363,6 +364,7 @@ h2 {
 
 .polaroid img {
 	padding-bottom: 15px;
+	width: 90%;
 }
 
 .title {
@@ -390,16 +392,6 @@ h2 {
 
 .info_content {
   padding: 5px;
-}
-
-footer {
-  margin-bottom: 10px;
-  margin-top: 10px;
-  text-align: center;
-  align: horizontal;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  color:#1995ab;
 }
 
 .srow {
@@ -469,9 +461,9 @@ footer {
     padding: 0 8px;
     background-color: #000;
     font-family: 'Quicksand', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
 	padding-bottom: 10px;
-	padding-top: 5px;
+	padding-top: 0px;
 }
 
 .w3-col, .w3-half, .w3-third, .w3-twothird, .w3-threequarter, .w3-quarter {
@@ -518,30 +510,56 @@ footer {
 }
 
 #logo2 img {
-    height: -10%;
-    padding-top: 10px;
+    height: -30%;
+    padding-top: 20px;
     padding-bottom: 10px;
     padding-right: 10px;
     padding-left: 10px;
 }
 
 .about {
-	padding-top: 10px;
+	padding-top: 20px;
 	color: #1995ab;
 }
 
 #socialmedia img {
-    height: 60px;
+    height: 40px;
     margin-right: 20px;
     padding-top: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+footer {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
+  align: horizontal;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 12px;
+  color:#1995ab;
+}
 
 /* Use a media query to add a break point at 800px: */
 @media screen and (max-width: 800px) {
   .left, .main, .right {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
+}
+
+#gallery a img {
+	padding-bottom: 20px;
+	padding-top: 20px
+	}
+
+.contact{
+	font-size: 16px;
+	text-align: center;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.contacimag {
+	width: 100%;
+	
 }

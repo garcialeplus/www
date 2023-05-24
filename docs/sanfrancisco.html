@@ -4,31 +4,41 @@
 
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Paola García-Leplus - Travel</title>
-	<link rel="stylesheet" href="css/website2.css">
-        <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
+    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
 	<link rel="icon" type="image/png" href="images/favicon.png">
+	<!--Reset -->
+	<link rel="stylesheet" href="css/website2.css">	
+	<script src="script/javascript.js"></script>
 </head>
 
-<body>
-	<header>
-		<h1>García-Leplus</h1>
-	</header>
-
-	<div>
-		<div id="logo">
-			<a href="index.html"><img src="images/logo2.png" id="top_logo" alt="logo" /></a>
-		</div>
-		<div id="menu">
-			<a href="contact.html">Contact</a>
-			<a href="art.html">Art</a>
-			<a href="design.html">Design</a>
-			<a href="photography.html">Photography</a>
-			<a href="index.html">Home</a>
-		</div>
-	</div>
-
-	<hr class="thick" />
+<body onload="onLoadMenu()">
+	
+<header class="header">
+	<h1 class="h1">
+		<a href="#" class="title">García-Leplus</a>
+	</h1>
+	
+	<button class="button">
+		<svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+			<path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+		</svg>
+	</button>
+	<nav class="nav">
+			<ul class="ul">
+				<li class="li"><a href="index.html" class="a">Home</a></li>
+				<li class="li"><a href="travel.html" class="a">Travel</a></li> 
+				<li class="li"><a href="collaborations.html" class="a">Collaborations</a></li> 
+				<li class="li"><a href="postcards.html" class="a">Postcards</a></li> 
+				<li class="li"><a href="design.html" class="a">Design</a></li> 
+				<li class="li"><a href="contact.html" class="a">Contact</a></li>
+			</ul>
+	</nav>
+</header>	
+	
+<hr class="thick" />
+<!--END HEADER-->
 
 	<h2>SAN FRANCISCO</h2>
 
@@ -42,7 +52,7 @@
             lightbox.init();
         </script>
 
-        <div id="gallery">
+     <div id="gallery">
 	  <a href="images/city0.jpg"
 	     data-pswp-width="1669"
 	     data-pswp-height="2500"
@@ -69,57 +79,36 @@
 	  </a>
 	</div>
 
-	<hr class="thin" />
 
-	<table class="info">
-		<tbody>
-			<tr>
-				<td id="left_column" class="info_content">
-					<div id="logo2">
-						<a href="index.html"><img src="images/logo2.png" alt="logo" /></a>
-					</div>
-				</td>
-				<td id="center_column" class="info_content">
-					<div class="about">
-						<a href="about.html">About me</a><br />
-						<a href="contact.html">Contact</a><br />
-						<a href="term.html">Term of use</a>
-					</div>
-				</td>
-				<td id="right_column" class="info_content">
-					<div class="socialmedia">
-						<table>
-							<tbody>
-								<tr>
-									<td>
-										<a href="https://www.instagram.com/paolaggarciacuevas/" target="_blank"><img src="images/instagram.png" alt="Instagram" /></a>
-									</td>
-									<td>
-										<a href="https://www.linkedin.com/in/paola-garcia-leplus/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn" /></a>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<a href="https://www.facebook.com/paolagarciaphoto/" target="_blank"><img src="images/facebook.png" alt="Facebook" /></a>
-									</td>
-									<td>
-										<a href="https://www.youtube.com/channel/UCOx2axDk0eRLjo2OBwkV6lg" target="_blank"><img src="images/youtube.png" alt="YouTube" /></a>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-
-	<hr class="thin" />
-
-	<footer>
-		Copyright © 2022 García-Leplus. All rights reserved. San Francisco, CA.
-	</footer>
-
+<hr class="thin2" />
+		
+	<div class="w3-row-padding">
+  		<div class="w3-third">
+    		<div id="logo2"> 
+				<a href="index.html"><img src="images/logo.png" alt="logo" /></a> 
+			</div>
+  		</div>
+  		<div class="w3-third">
+    		<div class="about"> 
+				<a href="contact.html">About me</a><br />
+				<a href="contact.html">Contact</a><br />
+				<a href="contact.html">Term of use</a> 
+			</div>
+ 		 </div>
+  		<div class="w3-third">
+   			 <div id="socialmedia"> 
+				<a href="https://www.instagram.com/paolaggarciacuevas/" target="_blank">
+					<img src="images/instagram.png" alt="Instagram" /></a> 
+				<a href="https://www.linkedin.com/in/paola-garcia-leplus/" target="_blank">
+					<img src="images/linkedin.png" alt="LinkedIn" /></a> 
+				<a href="https://www.facebook.com/paolagarciaphoto/" target="_blank">
+					<img src="images/facebook.png" alt="Facebook" /></a> 
+				<a href="https://www.youtube.com/channel/UCOx2axDk0eRLjo2OBwkV6lg" target="_blank">
+					<img src="images/youtube.png" alt="YouTube" /></a> 
+			</div>
+ 		 </div>
+	</div>
+<!--<hr class="thin3" />-->
+<footer> Copyright © 2023 García-Leplus. All rights reserved. San Francisco, CA. </footer>
 </body>
-
 </html>
