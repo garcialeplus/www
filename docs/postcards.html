@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 
 <html lang="en">
-	
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Paola García-Leplus - Postcards</title>
+	<title>Paola García-Leplus - Postcard</title>
+    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
 	<link rel="icon" type="image/png" href="images/favicon.png">
 	<!--Reset -->
 	<link rel="stylesheet" href="css/website2.css">	
 	<script src="script/javascript.js"></script>
 </head>
 
-<body onload="onLoadMenu(); onLoadFilter()">
+<body onload="onLoadMenu()">
 	
 <header class="header">
 	<h1 class="h1">
@@ -38,76 +39,72 @@
 	
 <hr class="thick" />
 <!--END HEADER-->
-	
+
 	<h2>POSTCARDS</h2>
-	<div id="myBtnContainer">
-		<button class="btn selected" onclick="filterSelection('all');">Show all</button>
-		<button class="btn" onclick="filterSelection('americas');">Women</button>
-		<button class="btn" onclick="filterSelection('europe');">Notebook</button>
+
+	<script type="module">
+            import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
+            const lightbox = new PhotoSwipeLightbox({
+              gallery: '#gallery',
+              children: 'a',
+              pswpModule: () => import('./photoswipe/dist/photoswipe.esm.js')
+            });
+            lightbox.init();
+        </script>
+
+     <div id="gallery">
+	  <a href="images/postcard1.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard1.png" alt="postcard 1" />
+	  </a>
+	  <a href="images/postcard2.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard2.png" alt="postcard 2" />
+	  </a>
+		  <a href="images/postcard3.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard3.png" alt="postcard 3" />
+	  </a>
+	  <a href="images/postcard4.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard4.png" alt="postcard 4" />
+	  </a>
+	  <a href="images/postcard5.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard5.png" alt="postcard5" />
+	  </a>
+	  <a href="images/postcard6.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard6.png" alt="postcard 6" />
+	  </a>
+		  <a href="images/postcard7.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard7.png" alt="postcard 7" />
+	  </a>
+	  <a href="images/postcard8.png"
+	     data-pswp-width="1669"
+	     data-pswp-height="2500"
+	     target="_blank">
+	    <img src="images/postcard8.png" alt="postcard 8" />
+	  </a>
 	</div>
 
-	<!-- Portfolio Gallery Grid -->
-	<div class="srow">
-		<div class="scolumn americas">
-			<div class="content">
-				<a href="newyork.html"><img src="images/nature1.jpg" alt="Americas" style="width:100%"></a>
-				<h4><a href="newyork.html">New York</a></h4>
-			</div>
-		</div>
-		<div class="scolumn americas">
-			<div class="content">
-				<a href="sanfrancisco.html"><img src="images/nature2.jpg" alt="Americas" style="width:100%"></a>
-				<h4><a href="sanfrancisco.html">San Francisco</a></h4>
-			</div>
-		</div>
-		<div class="scolumn americas">
-			<div class="content">
-				<a href="yellowstone.html"><img src="images/nature3.jpg" alt="Americas" style="width:100%"></a>
-				<h4><a href="yellowstone.html">Yellowstone National Park</a></h4>
-			</div>
-		</div>
 
-		<div class="scolumn europe">
-			<div class="content">
-				<a href="paris.html"><img src="images/city1.jpg" alt="Europe" style="width:100%"></a>
-				<h4><a href="paris.html">Paris</a></h4>
-			</div>
-		</div>
-		<div class="scolumn europe">
-			<div class="content">
-				<a href="venice.html"><img src="images/city2.jpg" alt="Europe" style="width:100%"></a>
-				<h4><a href="venice.html">Venice</a></h4>
-			</div>
-		</div>
-		<div class="scolumn europe">
-			<div class="content">
-				<a href="london.html"><img src="images/city3.jpg" alt="Europe" style="width:100%"></a>
-				<h4><a href="london.html">London</a></h4>
-			</div>
-		</div>
-
-		<div class="scolumn asia">
-			<div class="content">
-				<a href="jerusalem.html"><img src="images/wild1.jpg" alt="Asia" style="width:100%"></a>
-				<h4><a href="jerusalem.html">Jerusalem</a></h4>
-			</div>
-		</div>
-		<div class="scolumn asia">
-			<div class="content">
-				<a href="petra.html"><img src="images/wild2.jpg" alt="Asia" style="width:100%"></a>
-				<h4><a href="petra.html">Petra</a></h4>
-			</div>
-		</div>
-		<div class="scolumn asia">
-			<div class="content">
-				<a href="wadirum.html"><img src="images/wild3.jpg" alt="Asia" style="width:100%"></a>
-				<h4><a href="wadirum.html">Wadi Rum</a></h4>
-			</div>
-		</div>
-	</div>
-	<!-- END GRID -->
-
-	<hr class="thin2" />
+<hr class="thin2" />
 		
 	<div class="w3-row-padding">
   		<div class="w3-third">

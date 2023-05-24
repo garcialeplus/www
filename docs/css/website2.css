@@ -546,11 +546,15 @@ footer {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
   }
 }
+#gallery a {
+	display: block;
+}
 
 #gallery a img {
 	padding-bottom: 20px;
-	padding-top: 20px
-	}
+	padding-top: 20px;
+	max-height: 500px;
+}
 
 .contact{
 	font-size: 16px;
@@ -561,5 +565,19 @@ footer {
 
 .contacimag {
 	width: 100%;
-	
+}
+
+.posters a {
+	padding-left: 30px;
+	padding-bottom: 15px;
+	width: 90%;
+}
+
+.logos a {
+	padding-left: 20px;
+	padding-bottom: 15px;
+	width: 90%;
+}
+#gallery2 {
+	Width: 100%;
 }
