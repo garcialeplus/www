@@ -3,13 +3,13 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Paola García-Leplus - Posters</title>
-    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css">
-	<link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="photoswipe/dist/photoswipe.css"/>
+	<link rel="icon" type="image/png" href="images/favicon.png"/>
 	<!--Reset -->
-	<link rel="stylesheet" href="css/website2.css">	
+	<link rel="stylesheet" href="css/website2.css"/>	
 	<script src="script/javascript.js"></script>
 </head>
 
@@ -42,15 +42,7 @@
 
 	<h2>POSTERS</h2>
 
-	<script type="module">
-            import PhotoSwipeLightbox from './photoswipe/dist/photoswipe-lightbox.esm.js';
-            const lightbox = new PhotoSwipeLightbox({
-              gallery: '#gallery',
-              children: 'a',
-              pswpModule: () => import('./photoswipe/dist/photoswipe.esm.js')
-            });
-            lightbox.init();
-        </script>
+	<script type="module" src="script/photoswipe.js"></script>
 
      <div id="gallery">
 	   <a href="images/poster5.jpg"
