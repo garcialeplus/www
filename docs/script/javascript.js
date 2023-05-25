@@ -93,4 +93,3 @@ function onLoadMenu() {
     	nav.classList.toggle('activo')
 	})
 }
-
