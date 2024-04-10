@@ -2,6 +2,9 @@ User-agent: *
 Disallow: /robots/
 Disallow: /www/
 
+User-agent: GoogleOther
+Disallow: /
+
 User-agent: CCBot
 Disallow: /
 
