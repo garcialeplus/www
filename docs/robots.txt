@@ -1,29 +1,24 @@
 User-agent: *
 Disallow: /robots/
 Disallow: /www/
+Allow: /
 
-User-agent: GoogleOther
+User-agent: Amazonbot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Applebot
+Disallow: /
+
+User-agent: Bytespider
 Disallow: /
 
 User-agent: CCBot
 Disallow: /
 
-User-agent: GPTBot
-Disallow: /
-
 User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: Amazonbot
-Disallow: /
-
-User-agent: FacebookBot
-Disallow: /
-
-User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Claude-Web
@@ -32,8 +27,26 @@ Disallow: /
 User-agent: cohere-ai
 Disallow: /
 
+User-agent: Diffbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: GoogleOther
+Disallow: /
+
 User-agent: Omgilibot
 Disallow: /
 
-User-Agent: PerplexityBot
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: YouBot
 Disallow: /
