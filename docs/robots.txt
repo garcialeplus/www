@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /robots/
-Disallow: /www/
+Disallow: /404.html
+Disallow: /403.html
 Allow: /
 
 User-agent: Amazonbot
@@ -10,6 +11,9 @@ User-agent: anthropic-ai
 Disallow: /
 
 User-agent: Applebot
+Disallow: /
+
+User-agent: Applebot-Extended
 Disallow: /
 
 User-agent: Bytespider
@@ -40,6 +44,9 @@ User-agent: Google-Extended
 Disallow: /
 
 User-agent: GoogleOther
+Disallow: /
+
+User-agent: Omgili
 Disallow: /
 
 User-agent: Omgilibot
