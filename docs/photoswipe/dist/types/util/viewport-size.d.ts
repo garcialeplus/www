@@ -7,7 +7,10 @@
  * @param {PhotoSwipeBase} pswp
  * @returns {Point}
  */
-export function getViewportSize(options: PhotoSwipeOptions, pswp: PhotoSwipeBase): Point;
+export function getViewportSize(
+  options: PhotoSwipeOptions,
+  pswp: PhotoSwipeBase,
+): Point;
 /**
  * Parses padding option.
  * Supported formats:
@@ -43,7 +46,13 @@ export function getViewportSize(options: PhotoSwipeOptions, pswp: PhotoSwipeBase
  * @param {number} index Slide index
  * @returns {number}
  */
-export function parsePaddingOption(prop: 'left' | 'top' | 'bottom' | 'right', options: PhotoSwipeOptions, viewportSize: Point, itemData: SlideData, index: number): number;
+export function parsePaddingOption(
+  prop: "left" | "top" | "bottom" | "right",
+  options: PhotoSwipeOptions,
+  viewportSize: Point,
+  itemData: SlideData,
+  index: number,
+): number;
 /**
  * @param {PhotoSwipeOptions} options
  * @param {Point} viewportSize
@@ -51,8 +60,13 @@ export function parsePaddingOption(prop: 'left' | 'top' | 'bottom' | 'right', op
  * @param {number} index
  * @returns {Point}
  */
-export function getPanAreaSize(options: PhotoSwipeOptions, viewportSize: Point, itemData: SlideData, index: number): Point;
-export type PhotoSwipeOptions = import('../photoswipe.js').PhotoSwipeOptions;
-export type PhotoSwipeBase = import('../core/base.js').default;
-export type Point = import('../photoswipe.js').Point;
-export type SlideData = import('../slide/slide.js').SlideData;
+export function getPanAreaSize(
+  options: PhotoSwipeOptions,
+  viewportSize: Point,
+  itemData: SlideData,
+  index: number,
+): Point;
+export type PhotoSwipeOptions = import("../photoswipe.js").PhotoSwipeOptions;
+export type PhotoSwipeBase = import("../core/base.js").default;
+export type Point = import("../photoswipe.js").Point;
+export type SlideData = import("../slide/slide.js").SlideData;

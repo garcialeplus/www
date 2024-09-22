@@ -1,22 +1,22 @@
 export default Eventable;
-export type PhotoSwipeLightbox = import('../lightbox/lightbox.js').default;
-export type PhotoSwipe = import('../photoswipe.js').default;
-export type PhotoSwipeOptions = import('../photoswipe.js').PhotoSwipeOptions;
-export type DataSource = import('../photoswipe.js').DataSource;
-export type UIElementData = import('../ui/ui-element.js').UIElementData;
-export type ContentDefault = import('../slide/content.js').default;
-export type Slide = import('../slide/slide.js').default;
-export type SlideData = import('../slide/slide.js').SlideData;
-export type ZoomLevel = import('../slide/zoom-level.js').default;
-export type Bounds = import('../slide/get-thumb-bounds.js').Bounds;
+export type PhotoSwipeLightbox = import("../lightbox/lightbox.js").default;
+export type PhotoSwipe = import("../photoswipe.js").default;
+export type PhotoSwipeOptions = import("../photoswipe.js").PhotoSwipeOptions;
+export type DataSource = import("../photoswipe.js").DataSource;
+export type UIElementData = import("../ui/ui-element.js").UIElementData;
+export type ContentDefault = import("../slide/content.js").default;
+export type Slide = import("../slide/slide.js").default;
+export type SlideData = import("../slide/slide.js").SlideData;
+export type ZoomLevel = import("../slide/zoom-level.js").default;
+export type Bounds = import("../slide/get-thumb-bounds.js").Bounds;
 /**
  * Allow adding an arbitrary props to the Content
  * https://photoswipe.com/custom-content/#using-webp-image-format
  */
 export type Content = ContentDefault & Record<string, any>;
 export type Point = {
-    x?: number;
-    y?: number;
+  x?: number;
+  y?: number;
 };
 /**
  * https://photoswipe.com/events/
@@ -25,750 +25,1020 @@ export type Point = {
  * https://photoswipe.com/adding-ui-elements/
  */
 export type PhotoSwipeEventsMap = {
-    uiRegister: undefined;
+  uiRegister: undefined;
+  /**
+   * https://photoswipe.com/events/#initialization-events
+   */
+  uiElementCreate: {
+    data: UIElementData;
+  };
+  beforeOpen: undefined;
+  firstUpdate: undefined;
+  initialLayout: undefined;
+  change: undefined;
+  afterInit: undefined;
+  /**
+   * https://photoswipe.com/events/#opening-or-closing-transition-events
+   */
+  bindEvents: undefined;
+  openingAnimationStart: undefined;
+  openingAnimationEnd: undefined;
+  closingAnimationStart: undefined;
+  /**
+   * https://photoswipe.com/events/#closing-events
+   */
+  closingAnimationEnd: undefined;
+  close: undefined;
+  /**
+   * https://photoswipe.com/events/#pointer-and-gesture-events
+   */
+  destroy: undefined;
+  pointerDown: {
+    originalEvent: PointerEvent;
+  };
+  pointerMove: {
+    originalEvent: PointerEvent;
+  };
+  pointerUp: {
+    originalEvent: PointerEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  pinchClose: {
+    bgOpacity: number;
+  };
+  /**
+   * can be default prevented
+   *
+   *
+   * https://photoswipe.com/events/#slide-content-events
+   */
+  verticalDrag: {
+    panY: number;
+  };
+  contentInit: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  contentLoad: {
+    content: Content;
+    isLazy: boolean;
+  };
+  /**
+   * can be default prevented
+   */
+  contentLoadImage: {
+    content: Content;
+    isLazy: boolean;
+  };
+  loadComplete: {
+    content: Content;
+    slide: Slide;
+    isError?: boolean;
+  };
+  loadError: {
+    content: Content;
+    slide: Slide;
+  };
+  /**
+   * can be default prevented
+   */
+  contentResize: {
+    content: Content;
+    width: number;
+    height: number;
+  };
+  imageSizeChange: {
+    content: Content;
+    width: number;
+    height: number;
+    slide: Slide;
+  };
+  /**
+   * can be default prevented
+   */
+  contentLazyLoad: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  contentAppend: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  contentActivate: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  contentDeactivate: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  contentRemove: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   *
+   *
+   * undocumented
+   */
+  contentDestroy: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  imageClickAction: {
+    point: Point;
+    originalEvent: PointerEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  bgClickAction: {
+    point: Point;
+    originalEvent: PointerEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  tapAction: {
+    point: Point;
+    originalEvent: PointerEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  doubleTapAction: {
+    point: Point;
+    originalEvent: PointerEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  keydown: {
+    originalEvent: KeyboardEvent;
+  };
+  moveMainScroll: {
+    x: number;
+    dragging: boolean;
+  };
+  firstZoomPan: {
+    slide: Slide;
+  };
+  gettingData: {
+    slide: Slide | undefined;
+    data: SlideData;
+    index: number;
+  };
+  beforeResize: undefined;
+  resize: undefined;
+  viewportSize: undefined;
+  updateScrollOffset: undefined;
+  slideInit: {
+    slide: Slide;
+  };
+  afterSetContent: {
+    slide: Slide;
+  };
+  slideLoad: {
+    slide: Slide;
+  };
+  /**
+   * can be default prevented
+   */
+  appendHeavy: {
+    slide: Slide;
+  };
+  appendHeavyContent: {
+    slide: Slide;
+  };
+  slideActivate: {
+    slide: Slide;
+  };
+  slideDeactivate: {
+    slide: Slide;
+  };
+  slideDestroy: {
+    slide: Slide;
+  };
+  beforeZoomTo: {
+    destZoomLevel: number;
+    centerPoint: Point | undefined;
+    transitionDuration: number | false | undefined;
+  };
+  zoomPanUpdate: {
+    slide: Slide;
+  };
+  initialZoomPan: {
+    slide: Slide;
+  };
+  calcSlideSize: {
+    slide: Slide;
+  };
+  resolutionChanged: undefined;
+  /**
+   * can be default prevented
+   */
+  wheel: {
+    originalEvent: WheelEvent;
+  };
+  /**
+   * can be default prevented
+   */
+  contentAppendImage: {
+    content: Content;
+  };
+  /**
+   * can be default prevented
+   */
+  lazyLoadSlide: {
+    index: number;
+    itemData: SlideData;
+  };
+  lazyLoad: undefined;
+  calcBounds: {
+    slide: Slide;
+  };
+  /**
+   * legacy
+   */
+  zoomLevelsUpdate: {
+    zoomLevels: ZoomLevel;
+    slideData: SlideData;
+  };
+  init: undefined;
+  initialZoomIn: undefined;
+  initialZoomOut: undefined;
+  initialZoomInEnd: undefined;
+  initialZoomOutEnd: undefined;
+  numItems: {
+    dataSource: DataSource | undefined;
+    numItems: number;
+  };
+  itemData: {
+    itemData: SlideData;
+    index: number;
+  };
+  thumbBounds: {
+    index: number;
+    itemData: SlideData;
+    instance: PhotoSwipe;
+  };
+};
+/**
+ * https://photoswipe.com/filters/
+ */
+export type PhotoSwipeFiltersMap = {
+  /**
+   * Modify the total amount of slides. Example on Data sources page.
+   * https://photoswipe.com/filters/#numitems
+   */
+  numItems: (numItems: number, dataSource: DataSource | undefined) => number;
+  /**
+   * Modify slide item data. Example on Data sources page.
+   * https://photoswipe.com/filters/#itemdata
+   */
+  itemData: (itemData: SlideData, index: number) => SlideData;
+  /**
+   * Modify item data when it's parsed from DOM element. Example on Data sources page.
+   * https://photoswipe.com/filters/#domitemdata
+   */
+  domItemData: (
+    itemData: SlideData,
+    element: HTMLElement,
+    linkEl: HTMLAnchorElement,
+  ) => SlideData;
+  /**
+   * Modify clicked gallery item index.
+   * https://photoswipe.com/filters/#clickedindex
+   */
+  clickedIndex: (
+    clickedIndex: number,
+    e: MouseEvent,
+    instance: PhotoSwipeLightbox,
+  ) => number;
+  /**
+   * Modify placeholder image source.
+   * https://photoswipe.com/filters/#placeholdersrc
+   */
+  placeholderSrc: (
+    placeholderSrc: string | false,
+    content: Content,
+  ) => string | false;
+  /**
+   * Modify if the content is currently loading.
+   * https://photoswipe.com/filters/#iscontentloading
+   */
+  isContentLoading: (isContentLoading: boolean, content: Content) => boolean;
+  /**
+   * Modify if the content can be zoomed.
+   * https://photoswipe.com/filters/#iscontentzoomable
+   */
+  isContentZoomable: (isContentZoomable: boolean, content: Content) => boolean;
+  /**
+   * Modify if the placeholder should be used for the content.
+   * https://photoswipe.com/filters/#usecontentplaceholder
+   */
+  useContentPlaceholder: (
+    useContentPlaceholder: boolean,
+    content: Content,
+  ) => boolean;
+  /**
+   * Modify if the placeholder should be kept after the content is loaded.
+   * https://photoswipe.com/filters/#iskeepingplaceholder
+   */
+  isKeepingPlaceholder: (
+    isKeepingPlaceholder: boolean,
+    content: Content,
+  ) => boolean;
+  /**
+   * Modify an element when the content has error state (for example, if image cannot be loaded).
+   * https://photoswipe.com/filters/#contenterrorelement
+   */
+  contentErrorElement: (
+    contentErrorElement: HTMLElement,
+    content: Content,
+  ) => HTMLElement;
+  /**
+   * Modify a UI element that's being created.
+   * https://photoswipe.com/filters/#uielement
+   */
+  uiElement: (element: HTMLElement, data: UIElementData) => HTMLElement;
+  /**
+   * Modify the thubmnail element from which opening zoom animation starts or ends.
+   * https://photoswipe.com/filters/#thumbel
+   */
+  thumbEl: (
+    thumbnail: HTMLElement | null | undefined,
+    itemData: SlideData,
+    index: number,
+  ) => HTMLElement;
+  /**
+   * Modify the thubmnail bounds from which opening zoom animation starts or ends.
+   * https://photoswipe.com/filters/#thumbbounds
+   */
+  thumbBounds: (
+    thumbBounds: Bounds | undefined,
+    itemData: SlideData,
+    index: number,
+  ) => Bounds;
+  srcsetSizesWidth: (srcsetSizesWidth: number, content: Content) => number;
+};
+export type Filter<T extends keyof PhotoSwipeFiltersMap> = {
+  fn: PhotoSwipeFiltersMap[T];
+  priority: number;
+};
+export type AugmentedEvent<T extends keyof PhotoSwipeEventsMap> =
+  PhotoSwipeEventsMap[T] extends undefined
+    ? PhotoSwipeEvent<T>
+    : PhotoSwipeEvent<T> & PhotoSwipeEventsMap[T];
+export type EventCallback<T extends keyof PhotoSwipeEventsMap> = (
+  event: AugmentedEvent<T>,
+) => void;
+/**
+ * PhotoSwipe base class that can listen and dispatch for events.
+ * Shared by PhotoSwipe Core and PhotoSwipe Lightbox, extended by base.js
+ */
+declare class Eventable {
+  /**
+   * @type {{ [T in keyof PhotoSwipeEventsMap]?: ((event: AugmentedEvent<T>) => void)[] }}
+   */
+  _listeners: {
+    uiRegister?: ((event: PhotoSwipeEvent<"uiRegister">) => void)[] | undefined;
     /**
      * https://photoswipe.com/events/#initialization-events
      */
-    uiElementCreate: {
-        data: UIElementData;
-    };
-    beforeOpen: undefined;
-    firstUpdate: undefined;
-    initialLayout: undefined;
-    change: undefined;
-    afterInit: undefined;
+    uiElementCreate?:
+      | ((
+          event: PhotoSwipeEvent<"uiElementCreate"> & {
+            data: import("../ui/ui-element.js").UIElementData;
+          },
+        ) => void)[]
+      | undefined;
+    beforeOpen?: ((event: PhotoSwipeEvent<"beforeOpen">) => void)[] | undefined;
+    firstUpdate?:
+      | ((event: PhotoSwipeEvent<"firstUpdate">) => void)[]
+      | undefined;
+    initialLayout?:
+      | ((event: PhotoSwipeEvent<"initialLayout">) => void)[]
+      | undefined;
+    change?: ((event: PhotoSwipeEvent<"change">) => void)[] | undefined;
+    afterInit?: ((event: PhotoSwipeEvent<"afterInit">) => void)[] | undefined;
     /**
      * https://photoswipe.com/events/#opening-or-closing-transition-events
      */
-    bindEvents: undefined;
-    openingAnimationStart: undefined;
-    openingAnimationEnd: undefined;
-    closingAnimationStart: undefined;
+    bindEvents?: ((event: PhotoSwipeEvent<"bindEvents">) => void)[] | undefined;
+    openingAnimationStart?:
+      | ((event: PhotoSwipeEvent<"openingAnimationStart">) => void)[]
+      | undefined;
+    openingAnimationEnd?:
+      | ((event: PhotoSwipeEvent<"openingAnimationEnd">) => void)[]
+      | undefined;
+    closingAnimationStart?:
+      | ((event: PhotoSwipeEvent<"closingAnimationStart">) => void)[]
+      | undefined;
     /**
      * https://photoswipe.com/events/#closing-events
      */
-    closingAnimationEnd: undefined;
-    close: undefined;
+    closingAnimationEnd?:
+      | ((event: PhotoSwipeEvent<"closingAnimationEnd">) => void)[]
+      | undefined;
+    close?: ((event: PhotoSwipeEvent<"close">) => void)[] | undefined;
     /**
      * https://photoswipe.com/events/#pointer-and-gesture-events
      */
-    destroy: undefined;
-    pointerDown: {
-        originalEvent: PointerEvent;
-    };
-    pointerMove: {
-        originalEvent: PointerEvent;
-    };
-    pointerUp: {
-        originalEvent: PointerEvent;
-    };
+    destroy?: ((event: PhotoSwipeEvent<"destroy">) => void)[] | undefined;
+    pointerDown?:
+      | ((
+          event: PhotoSwipeEvent<"pointerDown"> & {
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
+    pointerMove?:
+      | ((
+          event: PhotoSwipeEvent<"pointerMove"> & {
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
+    pointerUp?:
+      | ((
+          event: PhotoSwipeEvent<"pointerUp"> & {
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    pinchClose: {
-        bgOpacity: number;
-    };
+    pinchClose?:
+      | ((
+          event: PhotoSwipeEvent<"pinchClose"> & {
+            bgOpacity: number;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      *
      *
      * https://photoswipe.com/events/#slide-content-events
      */
-    verticalDrag: {
-        panY: number;
-    };
-    contentInit: {
-        content: Content;
-    };
+    verticalDrag?:
+      | ((
+          event: PhotoSwipeEvent<"verticalDrag"> & {
+            panY: number;
+          },
+        ) => void)[]
+      | undefined;
+    contentInit?:
+      | ((
+          event: PhotoSwipeEvent<"contentInit"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentLoad: {
-        content: Content;
-        isLazy: boolean;
-    };
+    contentLoad?:
+      | ((
+          event: PhotoSwipeEvent<"contentLoad"> & {
+            content: Content;
+            isLazy: boolean;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentLoadImage: {
-        content: Content;
-        isLazy: boolean;
-    };
-    loadComplete: {
-        content: Content;
-        slide: Slide;
-        isError?: boolean;
-    };
-    loadError: {
-        content: Content;
-        slide: Slide;
-    };
+    contentLoadImage?:
+      | ((
+          event: PhotoSwipeEvent<"contentLoadImage"> & {
+            content: Content;
+            isLazy: boolean;
+          },
+        ) => void)[]
+      | undefined;
+    loadComplete?:
+      | ((
+          event: PhotoSwipeEvent<"loadComplete"> & {
+            content: Content;
+            slide: import("../slide/slide.js").default;
+            isError?: boolean | undefined;
+          },
+        ) => void)[]
+      | undefined;
+    loadError?:
+      | ((
+          event: PhotoSwipeEvent<"loadError"> & {
+            content: Content;
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentResize: {
-        content: Content;
-        width: number;
-        height: number;
-    };
-    imageSizeChange: {
-        content: Content;
-        width: number;
-        height: number;
-        slide: Slide;
-    };
+    contentResize?:
+      | ((
+          event: PhotoSwipeEvent<"contentResize"> & {
+            content: Content;
+            width: number;
+            height: number;
+          },
+        ) => void)[]
+      | undefined;
+    imageSizeChange?:
+      | ((
+          event: PhotoSwipeEvent<"imageSizeChange"> & {
+            content: Content;
+            width: number;
+            height: number;
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentLazyLoad: {
-        content: Content;
-    };
+    contentLazyLoad?:
+      | ((
+          event: PhotoSwipeEvent<"contentLazyLoad"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentAppend: {
-        content: Content;
-    };
+    contentAppend?:
+      | ((
+          event: PhotoSwipeEvent<"contentAppend"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentActivate: {
-        content: Content;
-    };
+    contentActivate?:
+      | ((
+          event: PhotoSwipeEvent<"contentActivate"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentDeactivate: {
-        content: Content;
-    };
+    contentDeactivate?:
+      | ((
+          event: PhotoSwipeEvent<"contentDeactivate"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentRemove: {
-        content: Content;
-    };
+    contentRemove?:
+      | ((
+          event: PhotoSwipeEvent<"contentRemove"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      *
      *
      * undocumented
      */
-    contentDestroy: {
-        content: Content;
-    };
+    contentDestroy?:
+      | ((
+          event: PhotoSwipeEvent<"contentDestroy"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    imageClickAction: {
-        point: Point;
-        originalEvent: PointerEvent;
-    };
+    imageClickAction?:
+      | ((
+          event: PhotoSwipeEvent<"imageClickAction"> & {
+            point: Point;
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    bgClickAction: {
-        point: Point;
-        originalEvent: PointerEvent;
-    };
+    bgClickAction?:
+      | ((
+          event: PhotoSwipeEvent<"bgClickAction"> & {
+            point: Point;
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    tapAction: {
-        point: Point;
-        originalEvent: PointerEvent;
-    };
+    tapAction?:
+      | ((
+          event: PhotoSwipeEvent<"tapAction"> & {
+            point: Point;
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    doubleTapAction: {
-        point: Point;
-        originalEvent: PointerEvent;
-    };
+    doubleTapAction?:
+      | ((
+          event: PhotoSwipeEvent<"doubleTapAction"> & {
+            point: Point;
+            originalEvent: PointerEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    keydown: {
-        originalEvent: KeyboardEvent;
-    };
-    moveMainScroll: {
-        x: number;
-        dragging: boolean;
-    };
-    firstZoomPan: {
-        slide: Slide;
-    };
-    gettingData: {
-        slide: Slide | undefined;
-        data: SlideData;
-        index: number;
-    };
-    beforeResize: undefined;
-    resize: undefined;
-    viewportSize: undefined;
-    updateScrollOffset: undefined;
-    slideInit: {
-        slide: Slide;
-    };
-    afterSetContent: {
-        slide: Slide;
-    };
-    slideLoad: {
-        slide: Slide;
-    };
+    keydown?:
+      | ((
+          event: PhotoSwipeEvent<"keydown"> & {
+            originalEvent: KeyboardEvent;
+          },
+        ) => void)[]
+      | undefined;
+    moveMainScroll?:
+      | ((
+          event: PhotoSwipeEvent<"moveMainScroll"> & {
+            x: number;
+            dragging: boolean;
+          },
+        ) => void)[]
+      | undefined;
+    firstZoomPan?:
+      | ((
+          event: PhotoSwipeEvent<"firstZoomPan"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    gettingData?:
+      | ((
+          event: PhotoSwipeEvent<"gettingData"> & {
+            slide: import("../slide/slide.js").default | undefined;
+            data: import("../slide/slide.js").SlideData;
+            index: number;
+          },
+        ) => void)[]
+      | undefined;
+    beforeResize?:
+      | ((event: PhotoSwipeEvent<"beforeResize">) => void)[]
+      | undefined;
+    resize?: ((event: PhotoSwipeEvent<"resize">) => void)[] | undefined;
+    viewportSize?:
+      | ((event: PhotoSwipeEvent<"viewportSize">) => void)[]
+      | undefined;
+    updateScrollOffset?:
+      | ((event: PhotoSwipeEvent<"updateScrollOffset">) => void)[]
+      | undefined;
+    slideInit?:
+      | ((
+          event: PhotoSwipeEvent<"slideInit"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    afterSetContent?:
+      | ((
+          event: PhotoSwipeEvent<"afterSetContent"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    slideLoad?:
+      | ((
+          event: PhotoSwipeEvent<"slideLoad"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    appendHeavy: {
-        slide: Slide;
-    };
-    appendHeavyContent: {
-        slide: Slide;
-    };
-    slideActivate: {
-        slide: Slide;
-    };
-    slideDeactivate: {
-        slide: Slide;
-    };
-    slideDestroy: {
-        slide: Slide;
-    };
-    beforeZoomTo: {
-        destZoomLevel: number;
-        centerPoint: Point | undefined;
-        transitionDuration: number | false | undefined;
-    };
-    zoomPanUpdate: {
-        slide: Slide;
-    };
-    initialZoomPan: {
-        slide: Slide;
-    };
-    calcSlideSize: {
-        slide: Slide;
-    };
-    resolutionChanged: undefined;
+    appendHeavy?:
+      | ((
+          event: PhotoSwipeEvent<"appendHeavy"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    appendHeavyContent?:
+      | ((
+          event: PhotoSwipeEvent<"appendHeavyContent"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    slideActivate?:
+      | ((
+          event: PhotoSwipeEvent<"slideActivate"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    slideDeactivate?:
+      | ((
+          event: PhotoSwipeEvent<"slideDeactivate"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    slideDestroy?:
+      | ((
+          event: PhotoSwipeEvent<"slideDestroy"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    beforeZoomTo?:
+      | ((
+          event: PhotoSwipeEvent<"beforeZoomTo"> & {
+            destZoomLevel: number;
+            centerPoint: Point | undefined;
+            transitionDuration: number | false | undefined;
+          },
+        ) => void)[]
+      | undefined;
+    zoomPanUpdate?:
+      | ((
+          event: PhotoSwipeEvent<"zoomPanUpdate"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    initialZoomPan?:
+      | ((
+          event: PhotoSwipeEvent<"initialZoomPan"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    calcSlideSize?:
+      | ((
+          event: PhotoSwipeEvent<"calcSlideSize"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
+    resolutionChanged?:
+      | ((event: PhotoSwipeEvent<"resolutionChanged">) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    wheel: {
-        originalEvent: WheelEvent;
-    };
+    wheel?:
+      | ((
+          event: PhotoSwipeEvent<"wheel"> & {
+            originalEvent: WheelEvent;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    contentAppendImage: {
-        content: Content;
-    };
+    contentAppendImage?:
+      | ((
+          event: PhotoSwipeEvent<"contentAppendImage"> & {
+            content: Content;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * can be default prevented
      */
-    lazyLoadSlide: {
-        index: number;
-        itemData: SlideData;
-    };
-    lazyLoad: undefined;
-    calcBounds: {
-        slide: Slide;
-    };
+    lazyLoadSlide?:
+      | ((
+          event: PhotoSwipeEvent<"lazyLoadSlide"> & {
+            index: number;
+            itemData: import("../slide/slide.js").SlideData;
+          },
+        ) => void)[]
+      | undefined;
+    lazyLoad?: ((event: PhotoSwipeEvent<"lazyLoad">) => void)[] | undefined;
+    calcBounds?:
+      | ((
+          event: PhotoSwipeEvent<"calcBounds"> & {
+            slide: import("../slide/slide.js").default;
+          },
+        ) => void)[]
+      | undefined;
     /**
      * legacy
      */
-    zoomLevelsUpdate: {
-        zoomLevels: ZoomLevel;
-        slideData: SlideData;
-    };
-    init: undefined;
-    initialZoomIn: undefined;
-    initialZoomOut: undefined;
-    initialZoomInEnd: undefined;
-    initialZoomOutEnd: undefined;
-    numItems: {
-        dataSource: DataSource | undefined;
-        numItems: number;
-    };
-    itemData: {
-        itemData: SlideData;
-        index: number;
-    };
-    thumbBounds: {
-        index: number;
-        itemData: SlideData;
-        instance: PhotoSwipe;
-    };
-};
-/**
- * https://photoswipe.com/filters/
- */
-export type PhotoSwipeFiltersMap = {
+    zoomLevelsUpdate?:
+      | ((
+          event: PhotoSwipeEvent<"zoomLevelsUpdate"> & {
+            zoomLevels: import("../slide/zoom-level.js").default;
+            slideData: import("../slide/slide.js").SlideData;
+          },
+        ) => void)[]
+      | undefined;
+    init?: ((event: PhotoSwipeEvent<"init">) => void)[] | undefined;
+    initialZoomIn?:
+      | ((event: PhotoSwipeEvent<"initialZoomIn">) => void)[]
+      | undefined;
+    initialZoomOut?:
+      | ((event: PhotoSwipeEvent<"initialZoomOut">) => void)[]
+      | undefined;
+    initialZoomInEnd?:
+      | ((event: PhotoSwipeEvent<"initialZoomInEnd">) => void)[]
+      | undefined;
+    initialZoomOutEnd?:
+      | ((event: PhotoSwipeEvent<"initialZoomOutEnd">) => void)[]
+      | undefined;
+    numItems?:
+      | ((
+          event: PhotoSwipeEvent<"numItems"> & {
+            dataSource: import("../photoswipe.js").DataSource | undefined;
+            numItems: number;
+          },
+        ) => void)[]
+      | undefined;
+    itemData?:
+      | ((
+          event: PhotoSwipeEvent<"itemData"> & {
+            itemData: import("../slide/slide.js").SlideData;
+            index: number;
+          },
+        ) => void)[]
+      | undefined;
+    thumbBounds?:
+      | ((
+          event: PhotoSwipeEvent<"thumbBounds"> & {
+            index: number;
+            itemData: import("../slide/slide.js").SlideData;
+            instance: import("../photoswipe.js").default;
+          },
+        ) => void)[]
+      | undefined;
+  };
+  /**
+   * @type {{ [T in keyof PhotoSwipeFiltersMap]?: Filter<T>[] }}
+   */
+  _filters: {
     /**
      * Modify the total amount of slides. Example on Data sources page.
      * https://photoswipe.com/filters/#numitems
      */
-    numItems: (numItems: number, dataSource: DataSource | undefined) => number;
+    numItems?: Filter<"numItems">[] | undefined;
     /**
      * Modify slide item data. Example on Data sources page.
      * https://photoswipe.com/filters/#itemdata
      */
-    itemData: (itemData: SlideData, index: number) => SlideData;
+    itemData?: Filter<"itemData">[] | undefined;
     /**
      * Modify item data when it's parsed from DOM element. Example on Data sources page.
      * https://photoswipe.com/filters/#domitemdata
      */
-    domItemData: (itemData: SlideData, element: HTMLElement, linkEl: HTMLAnchorElement) => SlideData;
+    domItemData?: Filter<"domItemData">[] | undefined;
     /**
      * Modify clicked gallery item index.
      * https://photoswipe.com/filters/#clickedindex
      */
-    clickedIndex: (clickedIndex: number, e: MouseEvent, instance: PhotoSwipeLightbox) => number;
+    clickedIndex?: Filter<"clickedIndex">[] | undefined;
     /**
      * Modify placeholder image source.
      * https://photoswipe.com/filters/#placeholdersrc
      */
-    placeholderSrc: (placeholderSrc: string | false, content: Content) => string | false;
+    placeholderSrc?: Filter<"placeholderSrc">[] | undefined;
     /**
      * Modify if the content is currently loading.
      * https://photoswipe.com/filters/#iscontentloading
      */
-    isContentLoading: (isContentLoading: boolean, content: Content) => boolean;
+    isContentLoading?: Filter<"isContentLoading">[] | undefined;
     /**
      * Modify if the content can be zoomed.
      * https://photoswipe.com/filters/#iscontentzoomable
      */
-    isContentZoomable: (isContentZoomable: boolean, content: Content) => boolean;
+    isContentZoomable?: Filter<"isContentZoomable">[] | undefined;
     /**
      * Modify if the placeholder should be used for the content.
      * https://photoswipe.com/filters/#usecontentplaceholder
      */
-    useContentPlaceholder: (useContentPlaceholder: boolean, content: Content) => boolean;
+    useContentPlaceholder?: Filter<"useContentPlaceholder">[] | undefined;
     /**
      * Modify if the placeholder should be kept after the content is loaded.
      * https://photoswipe.com/filters/#iskeepingplaceholder
      */
-    isKeepingPlaceholder: (isKeepingPlaceholder: boolean, content: Content) => boolean;
+    isKeepingPlaceholder?: Filter<"isKeepingPlaceholder">[] | undefined;
     /**
      * Modify an element when the content has error state (for example, if image cannot be loaded).
      * https://photoswipe.com/filters/#contenterrorelement
      */
-    contentErrorElement: (contentErrorElement: HTMLElement, content: Content) => HTMLElement;
+    contentErrorElement?: Filter<"contentErrorElement">[] | undefined;
     /**
      * Modify a UI element that's being created.
      * https://photoswipe.com/filters/#uielement
      */
-    uiElement: (element: HTMLElement, data: UIElementData) => HTMLElement;
+    uiElement?: Filter<"uiElement">[] | undefined;
     /**
      * Modify the thubmnail element from which opening zoom animation starts or ends.
      * https://photoswipe.com/filters/#thumbel
      */
-    thumbEl: (thumbnail: HTMLElement | null | undefined, itemData: SlideData, index: number) => HTMLElement;
+    thumbEl?: Filter<"thumbEl">[] | undefined;
     /**
      * Modify the thubmnail bounds from which opening zoom animation starts or ends.
      * https://photoswipe.com/filters/#thumbbounds
      */
-    thumbBounds: (thumbBounds: Bounds | undefined, itemData: SlideData, index: number) => Bounds;
-    srcsetSizesWidth: (srcsetSizesWidth: number, content: Content) => number;
-};
-export type Filter<T extends keyof PhotoSwipeFiltersMap> = {
-    fn: PhotoSwipeFiltersMap[T];
-    priority: number;
-};
-export type AugmentedEvent<T extends keyof PhotoSwipeEventsMap> = PhotoSwipeEventsMap[T] extends undefined ? PhotoSwipeEvent<T> : PhotoSwipeEvent<T> & PhotoSwipeEventsMap[T];
-export type EventCallback<T extends keyof PhotoSwipeEventsMap> = (event: AugmentedEvent<T>) => void;
-/**
- * PhotoSwipe base class that can listen and dispatch for events.
- * Shared by PhotoSwipe Core and PhotoSwipe Lightbox, extended by base.js
- */
-declare class Eventable {
-    /**
-     * @type {{ [T in keyof PhotoSwipeEventsMap]?: ((event: AugmentedEvent<T>) => void)[] }}
-     */
-    _listeners: {
-        uiRegister?: ((event: PhotoSwipeEvent<"uiRegister">) => void)[] | undefined;
-        /**
-         * https://photoswipe.com/events/#initialization-events
-         */
-        uiElementCreate?: ((event: PhotoSwipeEvent<"uiElementCreate"> & {
-            data: import("../ui/ui-element.js").UIElementData;
-        }) => void)[] | undefined;
-        beforeOpen?: ((event: PhotoSwipeEvent<"beforeOpen">) => void)[] | undefined;
-        firstUpdate?: ((event: PhotoSwipeEvent<"firstUpdate">) => void)[] | undefined;
-        initialLayout?: ((event: PhotoSwipeEvent<"initialLayout">) => void)[] | undefined;
-        change?: ((event: PhotoSwipeEvent<"change">) => void)[] | undefined;
-        afterInit?: ((event: PhotoSwipeEvent<"afterInit">) => void)[] | undefined;
-        /**
-         * https://photoswipe.com/events/#opening-or-closing-transition-events
-         */
-        bindEvents?: ((event: PhotoSwipeEvent<"bindEvents">) => void)[] | undefined;
-        openingAnimationStart?: ((event: PhotoSwipeEvent<"openingAnimationStart">) => void)[] | undefined;
-        openingAnimationEnd?: ((event: PhotoSwipeEvent<"openingAnimationEnd">) => void)[] | undefined;
-        closingAnimationStart?: ((event: PhotoSwipeEvent<"closingAnimationStart">) => void)[] | undefined;
-        /**
-         * https://photoswipe.com/events/#closing-events
-         */
-        closingAnimationEnd?: ((event: PhotoSwipeEvent<"closingAnimationEnd">) => void)[] | undefined;
-        close?: ((event: PhotoSwipeEvent<"close">) => void)[] | undefined;
-        /**
-         * https://photoswipe.com/events/#pointer-and-gesture-events
-         */
-        destroy?: ((event: PhotoSwipeEvent<"destroy">) => void)[] | undefined;
-        pointerDown?: ((event: PhotoSwipeEvent<"pointerDown"> & {
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        pointerMove?: ((event: PhotoSwipeEvent<"pointerMove"> & {
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        pointerUp?: ((event: PhotoSwipeEvent<"pointerUp"> & {
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        pinchClose?: ((event: PhotoSwipeEvent<"pinchClose"> & {
-            bgOpacity: number;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         *
-         *
-         * https://photoswipe.com/events/#slide-content-events
-         */
-        verticalDrag?: ((event: PhotoSwipeEvent<"verticalDrag"> & {
-            panY: number;
-        }) => void)[] | undefined;
-        contentInit?: ((event: PhotoSwipeEvent<"contentInit"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentLoad?: ((event: PhotoSwipeEvent<"contentLoad"> & {
-            content: Content;
-            isLazy: boolean;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentLoadImage?: ((event: PhotoSwipeEvent<"contentLoadImage"> & {
-            content: Content;
-            isLazy: boolean;
-        }) => void)[] | undefined;
-        loadComplete?: ((event: PhotoSwipeEvent<"loadComplete"> & {
-            content: Content;
-            slide: import("../slide/slide.js").default;
-            isError?: boolean | undefined;
-        }) => void)[] | undefined;
-        loadError?: ((event: PhotoSwipeEvent<"loadError"> & {
-            content: Content;
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentResize?: ((event: PhotoSwipeEvent<"contentResize"> & {
-            content: Content;
-            width: number;
-            height: number;
-        }) => void)[] | undefined;
-        imageSizeChange?: ((event: PhotoSwipeEvent<"imageSizeChange"> & {
-            content: Content;
-            width: number;
-            height: number;
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentLazyLoad?: ((event: PhotoSwipeEvent<"contentLazyLoad"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentAppend?: ((event: PhotoSwipeEvent<"contentAppend"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentActivate?: ((event: PhotoSwipeEvent<"contentActivate"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentDeactivate?: ((event: PhotoSwipeEvent<"contentDeactivate"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentRemove?: ((event: PhotoSwipeEvent<"contentRemove"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         *
-         *
-         * undocumented
-         */
-        contentDestroy?: ((event: PhotoSwipeEvent<"contentDestroy"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        imageClickAction?: ((event: PhotoSwipeEvent<"imageClickAction"> & {
-            point: Point;
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        bgClickAction?: ((event: PhotoSwipeEvent<"bgClickAction"> & {
-            point: Point;
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        tapAction?: ((event: PhotoSwipeEvent<"tapAction"> & {
-            point: Point;
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        doubleTapAction?: ((event: PhotoSwipeEvent<"doubleTapAction"> & {
-            point: Point;
-            originalEvent: PointerEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        keydown?: ((event: PhotoSwipeEvent<"keydown"> & {
-            originalEvent: KeyboardEvent;
-        }) => void)[] | undefined;
-        moveMainScroll?: ((event: PhotoSwipeEvent<"moveMainScroll"> & {
-            x: number;
-            dragging: boolean;
-        }) => void)[] | undefined;
-        firstZoomPan?: ((event: PhotoSwipeEvent<"firstZoomPan"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        gettingData?: ((event: PhotoSwipeEvent<"gettingData"> & {
-            slide: import("../slide/slide.js").default | undefined;
-            data: import("../slide/slide.js").SlideData;
-            index: number;
-        }) => void)[] | undefined;
-        beforeResize?: ((event: PhotoSwipeEvent<"beforeResize">) => void)[] | undefined;
-        resize?: ((event: PhotoSwipeEvent<"resize">) => void)[] | undefined;
-        viewportSize?: ((event: PhotoSwipeEvent<"viewportSize">) => void)[] | undefined;
-        updateScrollOffset?: ((event: PhotoSwipeEvent<"updateScrollOffset">) => void)[] | undefined;
-        slideInit?: ((event: PhotoSwipeEvent<"slideInit"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        afterSetContent?: ((event: PhotoSwipeEvent<"afterSetContent"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        slideLoad?: ((event: PhotoSwipeEvent<"slideLoad"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        appendHeavy?: ((event: PhotoSwipeEvent<"appendHeavy"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        appendHeavyContent?: ((event: PhotoSwipeEvent<"appendHeavyContent"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        slideActivate?: ((event: PhotoSwipeEvent<"slideActivate"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        slideDeactivate?: ((event: PhotoSwipeEvent<"slideDeactivate"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        slideDestroy?: ((event: PhotoSwipeEvent<"slideDestroy"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        beforeZoomTo?: ((event: PhotoSwipeEvent<"beforeZoomTo"> & {
-            destZoomLevel: number;
-            centerPoint: Point | undefined;
-            transitionDuration: number | false | undefined;
-        }) => void)[] | undefined;
-        zoomPanUpdate?: ((event: PhotoSwipeEvent<"zoomPanUpdate"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        initialZoomPan?: ((event: PhotoSwipeEvent<"initialZoomPan"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        calcSlideSize?: ((event: PhotoSwipeEvent<"calcSlideSize"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        resolutionChanged?: ((event: PhotoSwipeEvent<"resolutionChanged">) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        wheel?: ((event: PhotoSwipeEvent<"wheel"> & {
-            originalEvent: WheelEvent;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        contentAppendImage?: ((event: PhotoSwipeEvent<"contentAppendImage"> & {
-            content: Content;
-        }) => void)[] | undefined;
-        /**
-         * can be default prevented
-         */
-        lazyLoadSlide?: ((event: PhotoSwipeEvent<"lazyLoadSlide"> & {
-            index: number;
-            itemData: import("../slide/slide.js").SlideData;
-        }) => void)[] | undefined;
-        lazyLoad?: ((event: PhotoSwipeEvent<"lazyLoad">) => void)[] | undefined;
-        calcBounds?: ((event: PhotoSwipeEvent<"calcBounds"> & {
-            slide: import("../slide/slide.js").default;
-        }) => void)[] | undefined;
-        /**
-         * legacy
-         */
-        zoomLevelsUpdate?: ((event: PhotoSwipeEvent<"zoomLevelsUpdate"> & {
-            zoomLevels: import("../slide/zoom-level.js").default;
-            slideData: import("../slide/slide.js").SlideData;
-        }) => void)[] | undefined;
-        init?: ((event: PhotoSwipeEvent<"init">) => void)[] | undefined;
-        initialZoomIn?: ((event: PhotoSwipeEvent<"initialZoomIn">) => void)[] | undefined;
-        initialZoomOut?: ((event: PhotoSwipeEvent<"initialZoomOut">) => void)[] | undefined;
-        initialZoomInEnd?: ((event: PhotoSwipeEvent<"initialZoomInEnd">) => void)[] | undefined;
-        initialZoomOutEnd?: ((event: PhotoSwipeEvent<"initialZoomOutEnd">) => void)[] | undefined;
-        numItems?: ((event: PhotoSwipeEvent<"numItems"> & {
-            dataSource: import("../photoswipe.js").DataSource | undefined;
-            numItems: number;
-        }) => void)[] | undefined;
-        itemData?: ((event: PhotoSwipeEvent<"itemData"> & {
-            itemData: import("../slide/slide.js").SlideData;
-            index: number;
-        }) => void)[] | undefined;
-        thumbBounds?: ((event: PhotoSwipeEvent<"thumbBounds"> & {
-            index: number;
-            itemData: import("../slide/slide.js").SlideData;
-            instance: import("../photoswipe.js").default;
-        }) => void)[] | undefined;
-    };
-    /**
-     * @type {{ [T in keyof PhotoSwipeFiltersMap]?: Filter<T>[] }}
-     */
-    _filters: {
-        /**
-         * Modify the total amount of slides. Example on Data sources page.
-         * https://photoswipe.com/filters/#numitems
-         */
-        numItems?: Filter<"numItems">[] | undefined;
-        /**
-         * Modify slide item data. Example on Data sources page.
-         * https://photoswipe.com/filters/#itemdata
-         */
-        itemData?: Filter<"itemData">[] | undefined;
-        /**
-         * Modify item data when it's parsed from DOM element. Example on Data sources page.
-         * https://photoswipe.com/filters/#domitemdata
-         */
-        domItemData?: Filter<"domItemData">[] | undefined;
-        /**
-         * Modify clicked gallery item index.
-         * https://photoswipe.com/filters/#clickedindex
-         */
-        clickedIndex?: Filter<"clickedIndex">[] | undefined;
-        /**
-         * Modify placeholder image source.
-         * https://photoswipe.com/filters/#placeholdersrc
-         */
-        placeholderSrc?: Filter<"placeholderSrc">[] | undefined;
-        /**
-         * Modify if the content is currently loading.
-         * https://photoswipe.com/filters/#iscontentloading
-         */
-        isContentLoading?: Filter<"isContentLoading">[] | undefined;
-        /**
-         * Modify if the content can be zoomed.
-         * https://photoswipe.com/filters/#iscontentzoomable
-         */
-        isContentZoomable?: Filter<"isContentZoomable">[] | undefined;
-        /**
-         * Modify if the placeholder should be used for the content.
-         * https://photoswipe.com/filters/#usecontentplaceholder
-         */
-        useContentPlaceholder?: Filter<"useContentPlaceholder">[] | undefined;
-        /**
-         * Modify if the placeholder should be kept after the content is loaded.
-         * https://photoswipe.com/filters/#iskeepingplaceholder
-         */
-        isKeepingPlaceholder?: Filter<"isKeepingPlaceholder">[] | undefined;
-        /**
-         * Modify an element when the content has error state (for example, if image cannot be loaded).
-         * https://photoswipe.com/filters/#contenterrorelement
-         */
-        contentErrorElement?: Filter<"contentErrorElement">[] | undefined;
-        /**
-         * Modify a UI element that's being created.
-         * https://photoswipe.com/filters/#uielement
-         */
-        uiElement?: Filter<"uiElement">[] | undefined;
-        /**
-         * Modify the thubmnail element from which opening zoom animation starts or ends.
-         * https://photoswipe.com/filters/#thumbel
-         */
-        thumbEl?: Filter<"thumbEl">[] | undefined;
-        /**
-         * Modify the thubmnail bounds from which opening zoom animation starts or ends.
-         * https://photoswipe.com/filters/#thumbbounds
-         */
-        thumbBounds?: Filter<"thumbBounds">[] | undefined;
-        srcsetSizesWidth?: Filter<"srcsetSizesWidth">[] | undefined;
-    };
-    /** @type {PhotoSwipe | undefined} */
-    pswp: PhotoSwipe | undefined;
-    /** @type {PhotoSwipeOptions | undefined} */
-    options: Partial<import("../photoswipe.js").PreparedPhotoSwipeOptions> | undefined;
-    /**
-     * @template {keyof PhotoSwipeFiltersMap} T
-     * @param {T} name
-     * @param {PhotoSwipeFiltersMap[T]} fn
-     * @param {number} priority
-     */
-    addFilter<T extends keyof PhotoSwipeFiltersMap>(name: T, fn: PhotoSwipeFiltersMap[T], priority?: number): void;
-    /**
-     * @template {keyof PhotoSwipeFiltersMap} T
-     * @param {T} name
-     * @param {PhotoSwipeFiltersMap[T]} fn
-     */
-    removeFilter<T_1 extends keyof PhotoSwipeFiltersMap>(name: T_1, fn: PhotoSwipeFiltersMap[T_1]): void;
-    /**
-     * @template {keyof PhotoSwipeFiltersMap} T
-     * @param {T} name
-     * @param {Parameters<PhotoSwipeFiltersMap[T]>} args
-     * @returns {Parameters<PhotoSwipeFiltersMap[T]>[0]}
-     */
-    applyFilters<T_2 extends keyof PhotoSwipeFiltersMap>(name: T_2, ...args: Parameters<PhotoSwipeFiltersMap[T_2]>): Parameters<PhotoSwipeFiltersMap[T_2]>[0];
-    /**
-     * @template {keyof PhotoSwipeEventsMap} T
-     * @param {T} name
-     * @param {EventCallback<T>} fn
-     */
-    on<T_3 extends keyof PhotoSwipeEventsMap>(name: T_3, fn: EventCallback<T_3>): void;
-    /**
-     * @template {keyof PhotoSwipeEventsMap} T
-     * @param {T} name
-     * @param {EventCallback<T>} fn
-     */
-    off<T_4 extends keyof PhotoSwipeEventsMap>(name: T_4, fn: EventCallback<T_4>): void;
-    /**
-     * @template {keyof PhotoSwipeEventsMap} T
-     * @param {T} name
-     * @param {PhotoSwipeEventsMap[T]} [details]
-     * @returns {AugmentedEvent<T>}
-     */
-    dispatch<T_5 extends keyof PhotoSwipeEventsMap>(name: T_5, details?: PhotoSwipeEventsMap[T_5] | undefined): AugmentedEvent<T_5>;
+    thumbBounds?: Filter<"thumbBounds">[] | undefined;
+    srcsetSizesWidth?: Filter<"srcsetSizesWidth">[] | undefined;
+  };
+  /** @type {PhotoSwipe | undefined} */
+  pswp: PhotoSwipe | undefined;
+  /** @type {PhotoSwipeOptions | undefined} */
+  options:
+    | Partial<import("../photoswipe.js").PreparedPhotoSwipeOptions>
+    | undefined;
+  /**
+   * @template {keyof PhotoSwipeFiltersMap} T
+   * @param {T} name
+   * @param {PhotoSwipeFiltersMap[T]} fn
+   * @param {number} priority
+   */
+  addFilter<T extends keyof PhotoSwipeFiltersMap>(
+    name: T,
+    fn: PhotoSwipeFiltersMap[T],
+    priority?: number,
+  ): void;
+  /**
+   * @template {keyof PhotoSwipeFiltersMap} T
+   * @param {T} name
+   * @param {PhotoSwipeFiltersMap[T]} fn
+   */
+  removeFilter<T_1 extends keyof PhotoSwipeFiltersMap>(
+    name: T_1,
+    fn: PhotoSwipeFiltersMap[T_1],
+  ): void;
+  /**
+   * @template {keyof PhotoSwipeFiltersMap} T
+   * @param {T} name
+   * @param {Parameters<PhotoSwipeFiltersMap[T]>} args
+   * @returns {Parameters<PhotoSwipeFiltersMap[T]>[0]}
+   */
+  applyFilters<T_2 extends keyof PhotoSwipeFiltersMap>(
+    name: T_2,
+    ...args: Parameters<PhotoSwipeFiltersMap[T_2]>
+  ): Parameters<PhotoSwipeFiltersMap[T_2]>[0];
+  /**
+   * @template {keyof PhotoSwipeEventsMap} T
+   * @param {T} name
+   * @param {EventCallback<T>} fn
+   */
+  on<T_3 extends keyof PhotoSwipeEventsMap>(
+    name: T_3,
+    fn: EventCallback<T_3>,
+  ): void;
+  /**
+   * @template {keyof PhotoSwipeEventsMap} T
+   * @param {T} name
+   * @param {EventCallback<T>} fn
+   */
+  off<T_4 extends keyof PhotoSwipeEventsMap>(
+    name: T_4,
+    fn: EventCallback<T_4>,
+  ): void;
+  /**
+   * @template {keyof PhotoSwipeEventsMap} T
+   * @param {T} name
+   * @param {PhotoSwipeEventsMap[T]} [details]
+   * @returns {AugmentedEvent<T>}
+   */
+  dispatch<T_5 extends keyof PhotoSwipeEventsMap>(
+    name: T_5,
+    details?: PhotoSwipeEventsMap[T_5] | undefined,
+  ): AugmentedEvent<T_5>;
 }
 /** @typedef {import('../lightbox/lightbox.js').default} PhotoSwipeLightbox */
 /** @typedef {import('../photoswipe.js').default} PhotoSwipe */
@@ -970,12 +1240,12 @@ declare class Eventable {
  * @template {keyof PhotoSwipeEventsMap} T
  */
 declare class PhotoSwipeEvent<T extends keyof PhotoSwipeEventsMap> {
-    /**
-     * @param {T} type
-     * @param {PhotoSwipeEventsMap[T]} [details]
-     */
-    constructor(type: T, details?: PhotoSwipeEventsMap[T] | undefined);
-    type: T;
-    defaultPrevented: boolean;
-    preventDefault(): void;
+  /**
+   * @param {T} type
+   * @param {PhotoSwipeEventsMap[T]} [details]
+   */
+  constructor(type: T, details?: PhotoSwipeEventsMap[T] | undefined);
+  type: T;
+  defaultPrevented: boolean;
+  preventDefault(): void;
 }

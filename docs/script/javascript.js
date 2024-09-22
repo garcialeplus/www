@@ -6,12 +6,12 @@ function onLoadSlides() {
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 
 function showSlides(n) {
@@ -19,10 +19,10 @@ function showSlides(n) {
   var slides = document.getElementsByClassName("mySlides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
-    slideIndex = 1
+    slideIndex = 1;
   }
   if (n < 1) {
-    slideIndex = slides.length
+    slideIndex = slides.length;
   }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
@@ -35,13 +35,13 @@ function showSlides(n) {
 }
 
 function onLoadFilter() {
-  filterSelection("all") // Execute the function and show all columns
+  filterSelection("all"); // Execute the function and show all columns
 
   // Add selected class to the current button (highlight it)
   var btnContainer = document.getElementById("myBtnContainer");
   var btns = btnContainer.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
+    btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("selected");
       current[0].className = current[0].className.replace(" selected", "");
       this.className += " selected";
@@ -85,11 +85,11 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-function onLoadMenu() { 
-	/* click .button, .nav TOGGLE 'activo' */
-	var button = document.querySelector('.button')
-	var nav    = document.querySelector('.nav')
-	button.addEventListener('click', () => {
-    	nav.classList.toggle('activo')
-	})
+function onLoadMenu() {
+  /* click .button, .nav TOGGLE 'activo' */
+  var button = document.querySelector(".button");
+  var nav = document.querySelector(".nav");
+  button.addEventListener("click", () => {
+    nav.classList.toggle("activo");
+  });
 }
