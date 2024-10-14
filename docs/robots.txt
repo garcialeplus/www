@@ -25,6 +25,9 @@ Disallow: /
 User-agent: ChatGPT-User
 Disallow: /
 
+User-agent: ClaudeBot
+Disallow: /
+
 User-agent: Claude-Web
 Disallow: /
 
@@ -46,6 +49,15 @@ Disallow: /
 User-agent: GoogleOther
 Disallow: /
 
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Meta-ExternalAgent
+Disallow: /
+
+User-agent: OAI-Searchbot
+Disallow: /
+
 User-agent: Omgili
 Disallow: /
 
@@ -55,5 +67,11 @@ Disallow: /
 User-agent: PerplexityBot
 Disallow: /
 
+User-agent: Timpibot
+Disallow: /
+
 User-agent: YouBot
+Disallow: /
+
+User-agent: Webzio-Extended
 Disallow: /
