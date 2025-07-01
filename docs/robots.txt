@@ -34,10 +34,19 @@ Disallow: /
 User-agent: cohere-ai
 Disallow: /
 
+User-agent: Cotoyogi
+Disallow: /
+
+User-agent: Datenbank Crawler
+Disallow: /
+
 User-agent: Diffbot
 Disallow: /
 
 User-agent: FacebookBot
+Disallow: /
+
+User-agent: Factset_spyderbot
 Disallow: /
 
 User-agent: GPTBot
@@ -47,6 +56,9 @@ User-agent: Google-Extended
 Disallow: /
 
 User-agent: GoogleOther
+Disallow: /
+
+User-agent: ICC-Crawler
 Disallow: /
 
 User-agent: Kangaroo Bot
@@ -65,6 +77,12 @@ User-agent: Omgilibot
 Disallow: /
 
 User-agent: PerplexityBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SemrushBot-OCOB
 Disallow: /
 
 User-agent: Timpibot
