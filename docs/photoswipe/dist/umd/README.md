@@ -1,4 +1,4 @@
-`umd/` folder contains transpiled version of PhotoSwipe in universal module definition format.
+`umd/` directory contains transpiled version of PhotoSwipe in universal module definition format.
 
 Use it only if you are unable to use ESM version.
 
