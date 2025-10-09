@@ -71,6 +71,7 @@ jobs:
           DEFAULT_BRANCH: main
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           FILTER_REGEX_EXCLUDE: "docs/photoswipe/.*$"
+          TRIVY_SCANNERS: ${{ (github.event_name == 'schedule' || github.event_name == 'workflow_dispatch') && 'vuln,misconfig,secret' || 'misconfig,secret'}}
           BIOME_CONFIG_PATH: .biome.json
           GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE: .zizmor.yml
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
