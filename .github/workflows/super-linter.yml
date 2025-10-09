@@ -71,6 +71,7 @@ jobs:
           DEFAULT_BRANCH: main
           ENFORCE_COMMITLINT_CONFIGURATION_CHECK: true
           FILTER_REGEX_EXCLUDE: "docs/photoswipe/.*$"
+          BIOME_CONFIG_PATH: .biome.json
           GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE: .zizmor.yml
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
