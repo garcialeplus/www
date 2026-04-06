@@ -1853,8 +1853,8 @@ class PhotoSwipeLightbox extends PhotoSwipeBase {
      */
     const pswp =
       typeof module === "object"
-        ? new module.default(this.options) // eslint-disable-line
-        : new module(this.options); // eslint-disable-line
+        ? new module.default(this.options)
+        : new module(this.options);
 
     this.pswp = pswp;
     window.pswp = pswp;

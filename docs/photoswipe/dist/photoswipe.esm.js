@@ -232,7 +232,7 @@ function isSafari() {
 let supportsPassive = false;
 /* eslint-disable */
 try {
-  /* @ts-ignore */
+  /* @ts-expect-error */
   window.addEventListener(
     "test",
     null,
@@ -3128,7 +3128,7 @@ class Keyboard {
 
     if (keydownAction) {
       e.preventDefault();
-      // @ts-ignore
+      // @ts-expect-error
       pswp[keydownAction]();
     }
   }
@@ -3782,7 +3782,7 @@ class UIElement {
     if (data.onClick) {
       element.onclick = (e) => {
         if (typeof data.onClick === "string") {
-          // @ts-ignore
+          // @ts-expect-error
           pswp[data.onClick]();
         } else if (typeof data.onClick === "function") {
           data.onClick(e, element, pswp);
@@ -3909,7 +3909,7 @@ const zoomButton = {
   isButton: true,
   html: {
     isCustomSVG: true,
-    // eslint-disable-next-line max-len
+
     inner:
       '<path d="M17.426 19.926a6 6 0 1 1 1.5-1.5L23 22.5 21.5 24l-4.074-4.074z" id="pswp__icn-zoom"/>' +
       '<path fill="currentColor" class="pswp__zoom-icn-bar-h" d="M11 16v-2h6v2z"/>' +
@@ -3926,7 +3926,7 @@ const loadingIndicator = {
   order: 7,
   html: {
     isCustomSVG: true,
-    // eslint-disable-next-line max-len
+
     inner:
       '<path fill-rule="evenodd" clip-rule="evenodd" d="M21.2 16a5.2 5.2 0 1 1-5.2-5.2V8a8 8 0 1 0 8 8h-2.8Z" id="pswp__icn-loading"/>',
     outlineID: "pswp__icn-loading",

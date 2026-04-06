@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 
 <html lang="en">
   <head>
@@ -11,7 +11,12 @@
     <script src="script/javascript.js"></script>
   </head>
 
-  <body onload="onLoadMenu(); onLoadFilter()">
+  <body
+    onload="
+      onLoadMenu();
+      onLoadFilter();
+    "
+  >
     <header class="header">
       <h1 class="h1">
         <a href="./" class="title">García-Leplus</a>
@@ -51,15 +56,15 @@
 
     <h2>TRAVEL</h2>
     <div id="myBtnContainer">
-      <button class="btn selected" onclick="filterSelection('all');">
+      <button class="btn selected" onclick="filterSelection('all')">
         Show all
       </button>
-      <button class="btn" onclick="filterSelection('americas');">
+      <button class="btn" onclick="filterSelection('americas')">
         Americas
       </button>
-      <button class="btn" onclick="filterSelection('europe');">Europe</button>
-      <button class="btn" onclick="filterSelection('asia');">Asia</button>
-      <button class="btn" onclick="filterSelection('wild');">Wild</button>
+      <button class="btn" onclick="filterSelection('europe')">Europe</button>
+      <button class="btn" onclick="filterSelection('asia')">Asia</button>
+      <button class="btn" onclick="filterSelection('wild')">Wild</button>
     </div>
 
     <!-- Portfolio Gallery Grid -->
