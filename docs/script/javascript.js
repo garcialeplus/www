@@ -1,17 +1,19 @@
-/* exported _onLoadSlides, _plusSlides, _currentSlide, _onLoadFilter, _onLoadMenu */
 var slideIndex = 1;
 
+// eslint-disable-next-line no-unused-vars -- invoked from inline HTML handler
 function _onLoadSlides() {
   showSlides(slideIndex);
 }
 
 // Next/previous controls
+// eslint-disable-next-line no-unused-vars -- invoked from inline HTML handler
 function _plusSlides(n) {
   slideIndex += n;
   showSlides(slideIndex);
 }
 
 // Thumbnail image controls
+// eslint-disable-next-line no-unused-vars -- invoked from inline HTML handler
 function _currentSlide(n) {
   slideIndex = n;
   showSlides(slideIndex);
@@ -37,6 +39,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
+// eslint-disable-next-line no-unused-vars -- invoked from inline HTML handler
 function _onLoadFilter() {
   filterSelection("all"); // Execute the function and show all columns
 
@@ -89,6 +92,7 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
+// eslint-disable-next-line no-unused-vars -- invoked from inline HTML handler
 function _onLoadMenu() {
   /* click .button, .nav TOGGLE 'activo' */
   var button = document.querySelector(".button");

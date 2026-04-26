@@ -381,6 +381,7 @@ h2 {
 }
 
 .polaroid img {
+  display: inline;
   padding-bottom: 15px;
   width: 90%;
 }
@@ -571,6 +572,7 @@ h2 {
 }
 
 #logo2 img {
+  display: inline;
   height: auto;
   padding: 20px 10px 10px;
 }
@@ -581,6 +583,7 @@ h2 {
 }
 
 #socialmedia img {
+  display: inline;
   height: 40px;
   margin-right: 20px;
   padding-top: 20px;
@@ -623,6 +626,7 @@ footer {
 }
 
 #gallery a img {
+  display: inline;
   padding-bottom: 20px;
   padding-top: 20px;
   max-height: 500px;
