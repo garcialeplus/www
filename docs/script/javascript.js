@@ -7,12 +7,14 @@ function _onLoadSlides() {
 
 // Next/previous controls
 function _plusSlides(n) {
-  showSlides((slideIndex += n));
+  slideIndex += n;
+  showSlides(slideIndex);
 }
 
 // Thumbnail image controls
 function _currentSlide(n) {
-  showSlides((slideIndex = n));
+  slideIndex = n;
+  showSlides(slideIndex);
 }
 
 function showSlides(n) {
@@ -41,7 +43,8 @@ function _onLoadFilter() {
   // Add selected class to the current button (highlight it)
   var btnContainer = document.getElementById("my-btn-container");
   var btns = btnContainer.getElementsByClassName("btn");
-  for (var i = 0; i < btns.length; i++) {
+  var i;
+  for (i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("selected");
       current[0].className = current[0].className.replace(" selected", "");
@@ -53,7 +56,7 @@ function _onLoadFilter() {
 function filterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("scolumn");
-  if (c == "all") c = "";
+  if (c === "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
     w3RemoveClass(x[i], "show");
@@ -67,8 +70,8 @@ function w3AddClass(element, name) {
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
-    if (arr1.indexOf(arr2[i]) == -1) {
-      element.className += " " + arr2[i];
+    if (arr1.indexOf(arr2[i]) === -1) {
+      element.className += ` ${arr2[i]}`;
     }
   }
 }
