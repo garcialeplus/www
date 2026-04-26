@@ -12,8 +12,8 @@
 
   <body
     onload="
-      onLoadMenu();
-      onLoadFilter();
+      _onLoadMenu();
+      _onLoadFilter();
     "
   >
     <header class="header">
@@ -56,15 +56,25 @@
 
     <h2>TRAVEL</h2>
     <div id="my-btn-container">
-      <button type="button" class="btn selected" onclick="filterSelection('all')">
+      <button
+        type="button"
+        class="btn selected"
+        onclick="filterSelection('all')"
+      >
         Show all
       </button>
       <button type="button" class="btn" onclick="filterSelection('americas')">
         Americas
       </button>
-      <button type="button" class="btn" onclick="filterSelection('europe')">Europe</button>
-      <button type="button" class="btn" onclick="filterSelection('asia')">Asia</button>
-      <button type="button" class="btn" onclick="filterSelection('wild')">Wild</button>
+      <button type="button" class="btn" onclick="filterSelection('europe')">
+        Europe
+      </button>
+      <button type="button" class="btn" onclick="filterSelection('asia')">
+        Asia
+      </button>
+      <button type="button" class="btn" onclick="filterSelection('wild')">
+        Wild
+      </button>
     </div>
 
     <!-- Portfolio Gallery Grid -->

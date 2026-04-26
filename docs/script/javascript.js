@@ -1,17 +1,17 @@
-/* exported onLoadSlides, plusSlides, currentSlide, onLoadFilter, onLoadMenu */
+/* exported _onLoadSlides, _plusSlides, _currentSlide, _onLoadFilter, _onLoadMenu */
 var slideIndex = 1;
 
-function onLoadSlides() {
+function _onLoadSlides() {
   showSlides(slideIndex);
 }
 
 // Next/previous controls
-function plusSlides(n) {
+function _plusSlides(n) {
   showSlides((slideIndex += n));
 }
 
 // Thumbnail image controls
-function currentSlide(n) {
+function _currentSlide(n) {
   showSlides((slideIndex = n));
 }
 
@@ -35,7 +35,7 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-function onLoadFilter() {
+function _onLoadFilter() {
   filterSelection("all"); // Execute the function and show all columns
 
   // Add selected class to the current button (highlight it)
@@ -86,7 +86,7 @@ function w3RemoveClass(element, name) {
   element.className = arr1.join(" ");
 }
 
-function onLoadMenu() {
+function _onLoadMenu() {
   /* click .button, .nav TOGGLE 'activo' */
   var button = document.querySelector(".button");
   var nav = document.querySelector(".nav");
