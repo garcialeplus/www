@@ -1,3 +1,4 @@
+/* exported onLoadSlides, plusSlides, currentSlide, onLoadFilter, onLoadMenu */
 var slideIndex = 1;
 
 function onLoadSlides() {
@@ -16,7 +17,7 @@ function currentSlide(n) {
 
 function showSlides(n) {
   var i = 0;
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("my-slides");
   var dots = document.getElementsByClassName("dot");
   if (n > slides.length) {
     slideIndex = 1;
@@ -38,7 +39,7 @@ function onLoadFilter() {
   filterSelection("all"); // Execute the function and show all columns
 
   // Add selected class to the current button (highlight it)
-  var btnContainer = document.getElementById("myBtnContainer");
+  var btnContainer = document.getElementById("my-btn-container");
   var btns = btnContainer.getElementsByClassName("btn");
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
