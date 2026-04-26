@@ -1,5 +1,12 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "files": {
+    "includes": [
+      "**",
+      "!**/docs/lines",
+      "!**/reports/photoswipe"
+    ]
+  },
   "formatter": {
     "indentStyle": "space",
     "indentWidth": 2
